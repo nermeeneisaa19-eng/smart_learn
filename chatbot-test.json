@@ -1,0 +1,6 @@
+﻿{
+    "success":  true,
+    "error":  "429 You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.",
+    "reply":  "البيانات هي حقائق خام مثل الأرقام أو الكلمات أو الرموز، أما المعلومات فهي بيانات تمت معالجتها وتنظيمها فأصبح لها معنى.\n\nمثال:\nدرجة الطالب في الاختبار = بيانات.\nمعرفة أن الطالب يحتاج إلى مراجعة درس معين بناءً على الدرجة = معلومات.\n\nإذن البيانات تتحول إلى معلومات عندما نفهمها ونستخدمها في اتخاذ قرار.",
+    "fallback":  true
+}

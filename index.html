@@ -1,0 +1,2728 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SmartLearn HS — Smart Learning Platform for High School Students</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+<link rel="stylesheet" href="seduc_styles.css">
+</head>
+<body>
+
+<!-- ======================================================
+     LANDING
+====================================================== -->
+<div id="landing" class="screen active">
+  <nav class="nav">
+    <div class="logo" onclick="showScreen('landing')">
+      <div class="logo-icon">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGr" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#FFE3CC"/>
+            </linearGradient>
+          </defs>
+          <path d="M16 4 L4 10 L16 16 L28 10 Z" fill="url(#logoGr)"/>
+          <path d="M4 16 L16 22 L28 16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 22 L16 28 L28 22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+          <circle cx="24" cy="11" r="2.4" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">SmartLearn <span class="logo-tag">HS</span></div>
+        <div class="logo-sub">Smart Learning Platform · Egypt</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a class="nav-link" onclick="showScreen('features')">المميزات</a>
+      <button class="btn-out" onclick="showLogin('student')">دخول الطلاب</button>
+      <button class="btn-pr" onclick="showLogin('teacher')">دخول المعلمين</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero hero-pro">
+    <div class="hero-bg-orbs"><span></span><span></span><span></span></div>
+    <div class="hero-grid">
+      <!-- Text -->
+      <div class="hero-text">
+        <div class="hero-badge">
+          <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 0l1.7 5.3H15L10.6 8.6 12.3 14 8 10.7 3.7 14l1.7-5.4L1 5.3h5.3z"/></svg>
+          AI-Powered Learning · المنهج المصري 2025-2026
+        </div>
+        <h1 class="hero-en-title">
+          <span class="grad">Smart Learning Platform</span>
+          <span class="hero-en-sub">for High School Students</span>
+        </h1>
+        <h2 class="hero-ar-title">منصة التعليم الذكي للمرحلة الثانوية</h2>
+        <p class="hero-tagline">Learn Smarter… Achieve More with Confidence</p>
+        <p class="hero-sub">بيئة تعلم تفاعلية مدعومة بالذكاء الاصطناعي — كتب رسمية، شرح مخصّص لمستواك، معمل افتراضي حقيقي، مجسمات ثلاثية الأبعاد، وألعاب تعليمية لكل مادة في المنهج.</p>
+        <div class="hero-btns">
+          <button class="btn-pr btn-lg" onclick="showScreen('roles')">
+            دخول
+            <svg viewBox="0 0 16 16" width="14" height="14" style="margin-right:6px;transform:rotate(180deg);" aria-hidden="true"><path fill="currentColor" d="M8.5 3.5l4.5 4.5-4.5 4.5-1-1L10.5 8.5H3v-1h7.5L7.5 4.5z"/></svg>
+          </button>
+          <button class="btn-out btn-lg" onclick="showRegister()">إنشاء حساب جديد</button>
+        </div>
+      </div>
+
+      <!-- AI Illustration -->
+      <div class="hero-art" aria-hidden="true">
+        <svg class="hero-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="orbGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#FFE3CC"/>
+              <stop offset="40%" stop-color="#FF8C42"/>
+              <stop offset="100%" stop-color="#E67030"/>
+            </radialGradient>
+            <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="rgba(255,140,66,.45)"/>
+              <stop offset="100%" stop-color="rgba(255,140,66,0)"/>
+            </radialGradient>
+            <linearGradient id="brainGr" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#FFB37D"/>
+              <stop offset="1" stop-color="#FF8C42"/>
+            </linearGradient>
+            <linearGradient id="ringGr" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="#FFD2AC"/>
+              <stop offset="1" stop-color="#FF8C42"/>
+            </linearGradient>
+            <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="6" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- soft ambient glow -->
+          <circle cx="240" cy="240" r="220" fill="url(#glow)"/>
+
+          <!-- orbital rings -->
+          <g class="hero-orbits">
+            <ellipse cx="240" cy="240" rx="200" ry="80" fill="none" stroke="url(#ringGr)" stroke-width="1.5" stroke-dasharray="2,6" opacity=".55"/>
+            <ellipse cx="240" cy="240" rx="180" ry="180" fill="none" stroke="url(#ringGr)" stroke-width="1.5" stroke-dasharray="2,6" opacity=".35" transform="rotate(35 240 240)"/>
+            <ellipse cx="240" cy="240" rx="150" ry="60" fill="none" stroke="url(#ringGr)" stroke-width="1.5" stroke-dasharray="2,6" opacity=".55" transform="rotate(-30 240 240)"/>
+          </g>
+
+          <!-- neural network connections -->
+          <g class="hero-net" stroke="rgba(255,140,66,.35)" stroke-width="1" fill="none">
+            <line x1="240" y1="240" x2="120" y2="140"/>
+            <line x1="240" y1="240" x2="360" y2="140"/>
+            <line x1="240" y1="240" x2="100" y2="280"/>
+            <line x1="240" y1="240" x2="380" y2="280"/>
+            <line x1="240" y1="240" x2="160" y2="370"/>
+            <line x1="240" y1="240" x2="320" y2="370"/>
+            <line x1="240" y1="240" x2="240" y2="80"/>
+            <line x1="120" y1="140" x2="100" y2="280"/>
+            <line x1="360" y1="140" x2="380" y2="280"/>
+            <line x1="100" y1="280" x2="160" y2="370"/>
+            <line x1="380" y1="280" x2="320" y2="370"/>
+          </g>
+
+          <!-- central AI orb (graduation cap + brain) -->
+          <g filter="url(#softGlow)" class="hero-core">
+            <circle cx="240" cy="240" r="78" fill="url(#orbGrad)"/>
+            <circle cx="240" cy="240" r="78" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="2"/>
+            <!-- brain hemispheres (stylized) -->
+            <path d="M210 235 q-15 -25 5 -40 q15 -10 25 0 q10 -10 25 0 q20 15 5 40 q15 5 10 25 q-5 15 -25 12 q-5 12 -20 8 q-15 4 -20 -8 q-20 3 -25 -12 q-5 -20 10 -25 z"
+                  fill="rgba(255,255,255,.85)" stroke="#E67030" stroke-width="1.6"/>
+            <path d="M240 200 v85" stroke="#E67030" stroke-width="1.4" opacity=".6"/>
+            <!-- grad cap on top -->
+            <polygon points="240,180 290,200 240,220 190,200" fill="#2C2416"/>
+            <rect x="234" y="200" width="12" height="22" fill="#2C2416"/>
+            <circle cx="246" cy="222" r="3" fill="#FFD700"/>
+            <line x1="246" y1="222" x2="260" y2="240" stroke="#FFD700" stroke-width="1.5"/>
+          </g>
+
+          <!-- orbiting subject icons -->
+          <g class="hero-icons">
+            <g transform="translate(120 140)" class="hi-pulse">
+              <circle r="26" fill="#fff" stroke="#FF8C42" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-size="22">📚</text>
+            </g>
+            <g transform="translate(360 140)" class="hi-pulse" style="animation-delay:.4s;">
+              <circle r="26" fill="#fff" stroke="#3B8FDB" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-size="22">🔢</text>
+            </g>
+            <g transform="translate(100 280)" class="hi-pulse" style="animation-delay:.8s;">
+              <circle r="26" fill="#fff" stroke="#36B847" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-size="22">🧪</text>
+            </g>
+            <g transform="translate(380 280)" class="hi-pulse" style="animation-delay:1.2s;">
+              <circle r="26" fill="#fff" stroke="#9B5AE5" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-size="22">🧠</text>
+            </g>
+            <g transform="translate(160 370)" class="hi-pulse" style="animation-delay:1.6s;">
+              <circle r="26" fill="#fff" stroke="#E67E22" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-size="22">🏛️</text>
+            </g>
+            <g transform="translate(320 370)" class="hi-pulse" style="animation-delay:2s;">
+              <circle r="26" fill="#fff" stroke="#1ABC9C" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-size="22">💻</text>
+            </g>
+            <g transform="translate(240 80)" class="hi-pulse" style="animation-delay:2.4s;">
+              <circle r="26" fill="#fff" stroke="#FF8C42" stroke-width="2"/>
+              <text y="6" text-anchor="middle" font-size="22">✨</text>
+            </g>
+          </g>
+
+          <!-- floating sparkles -->
+          <g class="hero-sparks" fill="#FF8C42">
+            <circle cx="60" cy="80" r="3"/>
+            <circle cx="430" cy="60" r="2.5"/>
+            <circle cx="450" cy="380" r="3"/>
+            <circle cx="40" cy="400" r="2.5"/>
+            <circle cx="80" cy="220" r="2"/>
+            <circle cx="420" cy="220" r="2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="proposed-note">⚠️ هذا النموذج يمثل مقترحاً وظيفياً لمنصة تعليمية — وليس منصة شاملة معتمدة رسمياً</div>
+  </section>
+</div>
+
+<!-- ======================================================
+     FEATURES SCREEN — صفحة المميزات الكاملة
+====================================================== -->
+<div id="features" class="screen">
+  <nav class="nav">
+    <div class="logo" onclick="showScreen('landing')">
+      <div class="logo-icon">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <defs><linearGradient id="logoGr2" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#FFE3CC"/></linearGradient></defs>
+          <path d="M16 4 L4 10 L16 16 L28 10 Z" fill="url(#logoGr2)"/>
+          <path d="M4 16 L16 22 L28 16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 22 L16 28 L28 22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+          <circle cx="24" cy="11" r="2.4" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">SmartLearn <span class="logo-tag">HS</span></div>
+        <div class="logo-sub">Smart Learning Platform · Egypt</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <button class="btn-out" onclick="showScreen('landing')">→ الرئيسية</button>
+      <button class="btn-pr" onclick="showScreen('roles')">ابدأ الآن</button>
+    </div>
+  </nav>
+  <section class="page-section">
+    <div class="page-head">
+      <div class="hero-badge">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 0l1.7 5.3H15L10.6 8.6 12.3 14 8 10.7 3.7 14l1.7-5.4L1 5.3h5.3z"/></svg>
+        لماذا SmartLearn HS؟
+      </div>
+      <h1 class="page-title">المميّزات الكاملة للمنصة</h1>
+      <p class="page-sub">كل ما تحتاجه لتعلّم ذكي ومتكامل في مكان واحد — من المنهج الرسمي إلى أدوات الذكاء الاصطناعي والمعمل الافتراضي والمجسمات التفاعلية.</p>
+    </div>
+
+    <div class="feat-grid feat-grid-lg">
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#FFE3CC,#FFB37D);">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.18L19.82 8 12 11.82 4.18 8 12 4.18z"/></svg>
+        </div>
+        <div class="feat-title">المنهج الرسمي 2025-2026</div>
+        <div class="feat-desc">كتب وزارة التربية والتعليم كاملة، الوحدات والدروس بكل تفاصيلها لكل مادة في الأول الثانوي. متابعة منظمة درساً درساً.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#E0EFFF,#B8D9FF);color:#1B6DB5;">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 3a9 9 0 100 18 9 9 0 000-18zm0 4a3 3 0 110 6 3 3 0 010-6zm0 14c-2.5 0-4.7-1.3-6-3.2.1-2 4-3.1 6-3.1s5.9 1.1 6 3.1c-1.3 1.9-3.5 3.2-6 3.2z"/></svg>
+        </div>
+        <div class="feat-title">شرح مخصّص لمستواك</div>
+        <div class="feat-desc">اختبار قبلي قصير لكل مادة يحدّد مستواك (ضعيف · متوسط · ممتاز)، ثم يتكيّف الشرح والتمارين مع مستواك تلقائياً.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#E6FFEC,#B6F0BB);color:#1B8A30;">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M19 3H5a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2V5a2 2 0 00-2-2zm-1 13H6V8h12v8z"/></svg>
+        </div>
+        <div class="feat-title">معمل افتراضي تفاعلي</div>
+        <div class="feat-desc">تجارب كيمياء وفيزياء وأحياء بمحاكاة حقيقية — قانون أوم، البندول، الخلية، DNA، تدريب نموذج AI. أدوات منفصلة للأدبي والعلمي.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#F1E2FF,#D4B8FF);color:#7B3ADB;">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 1a4 4 0 014 4v6a4 4 0 11-8 0V5a4 4 0 014-4zm7 10a7 7 0 01-6 6.93V21h-2v-3.07A7 7 0 015 11h2a5 5 0 0010 0h2z"/></svg>
+        </div>
+        <div class="feat-title">مساعد AI يجاوبك فوراً</div>
+        <div class="feat-desc">شرح، توليد اختبارات وملخصات وخرائط ذهنية وبودكاست وعروض تقديمية — من المنهج الرسمي ومناسب لمستواك. متاح ٢٤/٧.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#FFEAEA,#FFB8B8);color:#A32D2D;">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M21 7H3v10h18V7zm-2 8H5V9h14v6zM10 11l5 1.5L10 14v-3z"/></svg>
+        </div>
+        <div class="feat-title">قناة مدرستنا داخل المنصة</div>
+        <div class="feat-desc">البث المباشر للحلقات التعليمية الرسمية على YouTube، أرشيف كامل، وجدول المواعيد للحصص.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#FFF4D6,#FFD88A);color:#8B6914;">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.56 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="feat-title">مجسمات ثلاثية الأبعاد</div>
+        <div class="feat-desc">تتعلّم بالنظر — الخلية والـDNA والذرة للعلمي، الأهرامات والكعبة والبارثينون للأدبي. اسحبها لتدويرها.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#E0F7F4,#A8E6DD);color:#0F766E;">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M5 3a2 2 0 00-2 2v14l4-4h12a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h14v8H6.17L5 14.17V5z"/></svg>
+        </div>
+        <div class="feat-title">ألعاب تعليمية لكل مادة</div>
+        <div class="feat-desc">اختبارات ومطابقات وألغاز وإكمال الفراغ — لكل مادة قاعدة بياناتها الخاصة. اللعب يكسبك نقاطاً وشارات.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon" style="background:linear-gradient(135deg,#FFE0F0,#FFB6D9);color:#B91467;">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path fill="currentColor" d="M16 4v3h-2V4h-4v3H8V4H5v16h14V4h-3zm1 14H7v-9h10v9z"/></svg>
+        </div>
+        <div class="feat-title">٤ لوحات تحكم متخصصة</div>
+        <div class="feat-desc">للطالب والمعلم وولي الأمر والإدارة — كل دور له واجهته وأدواته الخاصة لمتابعة المسار التعليمي بكفاءة.</div>
+      </div>
+    </div>
+
+    <div class="page-cta">
+      <h3>جاهزة للانطلاق؟</h3>
+      <p>اختر دورك وابدأ رحلتك التعليمية الذكية.</p>
+      <button class="btn-pr btn-lg" onclick="showScreen('roles')">اختر دورك ←</button>
+    </div>
+  </section>
+</div>
+
+<!-- ======================================================
+     ROLES SCREEN — صفحة اختيار الدور
+====================================================== -->
+<div id="roles" class="screen">
+  <nav class="nav">
+    <div class="logo" onclick="showScreen('landing')">
+      <div class="logo-icon">
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <defs><linearGradient id="logoGr3" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff"/><stop offset="1" stop-color="#FFE3CC"/></linearGradient></defs>
+          <path d="M16 4 L4 10 L16 16 L28 10 Z" fill="url(#logoGr3)"/>
+          <path d="M4 16 L16 22 L28 16" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M4 22 L16 28 L28 22" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".7"/>
+          <circle cx="24" cy="11" r="2.4" fill="#fff"/>
+        </svg>
+      </div>
+      <div>
+        <div class="logo-text">SmartLearn <span class="logo-tag">HS</span></div>
+        <div class="logo-sub">Smart Learning Platform · Egypt</div>
+      </div>
+    </div>
+    <div class="nav-links">
+      <button class="btn-out" onclick="showScreen('landing')">→ الرئيسية</button>
+      <button class="btn-pr" onclick="showScreen('features')">المميزات</button>
+    </div>
+  </nav>
+  <section class="page-section">
+    <div class="page-head">
+      <div class="hero-badge">
+        <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true"><path fill="currentColor" d="M8 0l1.7 5.3H15L10.6 8.6 12.3 14 8 10.7 3.7 14l1.7-5.4L1 5.3h5.3z"/></svg>
+        ابدأ رحلتك مع SmartLearn HS
+      </div>
+      <h1 class="page-title">اختر دورك في المنصة</h1>
+      <p class="page-sub">ابدأ رحلتك التعليمية بطريقة أذكى وأسهل</p>
+    </div>
+    <div class="role-grid role-grid-lg">
+      <div class="role-card" onclick="showLogin('student')">
+        <div class="role-icon ri-s">
+          <span class="material-icons-outlined">menu_book</span>
+        </div>
+        <div class="role-title">🎓 الطالب</div>
+        <div class="role-desc">الوصول إلى دروس تفاعلية، اختبارات، ومحتوى مخصص يساعدك على التفوق.</div>
+        <button class="role-btn">دخول كطالب</button>
+      </div>
+      <div class="role-card" onclick="showLogin('teacher')">
+        <div class="role-icon ri-t">
+          <span class="material-icons-outlined">assignment</span>
+        </div>
+        <div class="role-title">👩‍🏫 المعلم</div>
+        <div class="role-desc">إنشاء المحتوى التعليمي، إعداد الاختبارات، ومتابعة تقدم الطلاب بسهولة.</div>
+        <button class="role-btn">دخول كمعلم</button>
+      </div>
+      <div class="role-card" onclick="showLogin('parent')">
+        <div class="role-icon ri-p">
+          <span class="material-icons-outlined">diversity_3</span>
+        </div>
+        <div class="role-title">👨‍👩‍👧 ولي الأمر</div>
+        <div class="role-desc">متابعة مستوى الأبناء بشكل مستمر، استلام تقارير الأداء، والتواصل مع المعلمين.</div>
+        <button class="role-btn">دخول كولي أمر</button>
+      </div>
+      <div class="role-card" onclick="showLogin('admin')">
+        <div class="role-icon ri-a">
+          <span class="material-icons-outlined">manage_accounts</span>
+        </div>
+        <div class="role-title">👨‍💼 الإدارة</div>
+        <div class="role-desc">إدارة شاملة للمنصة تشمل التحكم في المستخدمين، متابعة الأداء، وإصدار التقارير.</div>
+        <button class="role-btn">دخول كمسؤول</button>
+      </div>
+    </div>
+    <div class="why-choose-section">
+      <h2 class="why-title">لماذا تختار SmartLearn؟</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <div class="why-icon">
+            <span class="material-icons-outlined">auto_stories</span>
+          </div>
+          <h3>تعلم تفاعلي</h3>
+          <p>دروس مخصصة وألعاب تعليمية تجعل التعلم ممتعاً وفعالاً.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <span class="material-icons-outlined">analytics</span>
+          </div>
+          <h3>متابعة ذكية</h3>
+          <p>تقارير مفصلة وتحليلات لأداء الطلاب في الوقت الفعلي.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-icon">
+            <span class="material-icons-outlined">smart_toy</span>
+          </div>
+          <h3>دعم بالذكاء الاصطناعي</h3>
+          <p>مساعد AI يساعد في الشرح والإجابة على الأسئلة الفورية.</p>
+        </div>
+      </div>
+    </div>
+    <div class="page-foot">
+      أو
+      <button class="link-btn" onclick="showRegister()">أنشئ حساباً جديداً</button>
+    </div>
+  </section>
+</div>
+
+<!-- ======================================================
+     REGISTER
+====================================================== -->
+<div id="register" class="screen" style="background:var(--bg);align-items:center;justify-content:center;padding:40px;">
+  <div class="reg-card anim">
+    <div style="text-align:center;margin-bottom:26px;">
+      <div class="logo" style="justify-content:center;margin-bottom:12px;">
+        <div class="logo-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div><div class="logo-text">SmartLearn HS</div><div class="logo-sub">إنشاء حساب جديد</div></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div class="f-group">
+        <label class="f-label">الاسم الأول</label>
+        <input class="f-inp" type="text" placeholder="الاسم الأول">
+      </div>
+      <div class="f-group">
+        <label class="f-label">اسم العائلة</label>
+        <input class="f-inp" type="text" placeholder="اسم العائلة">
+      </div>
+    </div>
+    <div class="f-group">
+      <label class="f-label">البريد الإلكتروني</label>
+      <input class="f-inp" type="email" placeholder="example@email.com">
+    </div>
+    <div class="f-group">
+      <label class="f-label">اسم المستخدم</label>
+      <input class="f-inp" type="text" placeholder="اختر اسم مستخدم فريد">
+    </div>
+    <div class="f-group">
+      <label class="f-label">الدور</label>
+      <select class="f-sel" id="reg-role" onchange="toggleRegFields()">
+        <option value="student">طالب</option>
+        <option value="teacher">معلم</option>
+        <option value="parent">ولي أمر</option>
+      </select>
+    </div>
+    <div id="reg-student-fields">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="f-group">
+          <label class="f-label">الصف الدراسي</label>
+          <select class="f-sel">
+            <option>الأول الثانوي</option>
+            <option>الثاني الثانوي</option>
+            <option>الثالث الثانوي</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label class="f-label">التخصص</label>
+          <select class="f-sel" id="specialization">
+            <option value="sci">علمي — علوم</option>
+            <option value="math">علمي — رياضة</option>
+            <option value="lit">أدبي</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div id="reg-teacher-fields" class="hidden">
+      <div class="f-group">
+        <label class="f-label">المادة التي تدرّسها</label>
+        <select class="f-sel">
+          <option>البرمجة والذكاء الاصطناعي</option>
+          <option>الرياضيات</option>
+          <option>اللغة العربية</option>
+          <option>الكيمياء</option>
+          <option>الفيزياء</option>
+          <option>الأحياء</option>
+          <option>اللغة الإنجليزية</option>
+          <option>الجغرافيا</option>
+          <option>التاريخ</option>
+        </select>
+      </div>
+      <div class="f-group">
+        <label class="f-label">المؤهل العلمي</label>
+        <select class="f-sel"><option>بكالوريوس</option><option>ماجستير</option><option>دكتوراه</option></select>
+      </div>
+      <div class="f-group" style="grid-column:1/-1">
+        <label class="f-label">السيرة الذاتية (PDF/Word)</label>
+        <div class="upload-area">
+          <div style="font-size:20px;margin-bottom:6px;">📎</div>
+          <div style="font-size:13px;font-weight:600;margin-bottom:4px;">ارفع سيرتك الذاتية</div>
+          <div style="font-size:11px;color:var(--tx3);">PDF أو Word — حتى 5 ميجا</div>
+          <input type="file" accept=".pdf,.doc,.docx" id="cv-upload" onchange="previewUpload(this,'cv')">
+        </div>
+        <div id="preview-cv" style="font-size:12px;color:var(--prd);margin-top:6px;"></div>
+      </div>
+    </div>
+    <div id="reg-parent-fields" class="hidden">
+      <div class="f-group">
+        <label class="f-label">رقم الطالب المربوط (كود المنصة)</label>
+        <input class="f-inp" type="text" placeholder="SmartLearn HS-2025-XXXXX">
+      </div>
+    </div>
+    <div class="f-group">
+      <label class="f-label">كلمة المرور</label>
+      <input class="f-inp" type="password" placeholder="••••••••">
+    </div>
+    <button class="login-btn" onclick="doRegister()">إنشاء الحساب</button>
+    <button class="back-link" onclick="showScreen('landing')">→ العودة للصفحة الرئيسية</button>
+  </div>
+</div>
+
+<!-- ======================================================
+     LOGIN
+====================================================== -->
+<div id="login" class="screen" style="background:var(--bg);align-items:center;justify-content:center;padding:40px;">
+  <div class="login-card anim">
+    <div class="login-header">
+      <div id="login-badge" class="login-badge lb-s">🎓 طالب</div>
+      <h2 class="login-title">مرحباً في SmartLearn HS</h2>
+      <p class="login-sub">بيئة تعلم إلكترونية — SmartLearn HS</p>
+    </div>
+    <div class="f-group">
+      <label class="f-label">اسم المستخدم أو البريد الإلكتروني</label>
+      <input class="f-inp" id="un" type="text" value="narmin2025">
+    </div>
+    <div class="f-group">
+      <label class="f-label">كلمة المرور</label>
+      <input class="f-inp" type="password" value="••••••••">
+    </div>
+    <div id="student-login-extras">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="f-group">
+          <label class="f-label">الصف الدراسي</label>
+          <select class="f-sel" id="grade-sel">
+            <option>الأول الثانوي</option>
+            <option>الثاني الثانوي</option>
+            <option>الثالث الثانوي</option>
+          </select>
+        </div>
+        <div class="f-group">
+          <label class="f-label">التخصص</label>
+          <select class="f-sel" id="spec-sel">
+            <option value="sci">علمي — علوم</option>
+            <option value="scimath">علمي — رياضة</option>
+            <option value="lit">أدبي</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <button class="login-btn" onclick="doLogin()">دخول المنصة ←</button>
+    <div class="divider">أو</div>
+    <button class="btn-out" style="width:100%;padding:12px;" onclick="showRegister()">إنشاء حساب جديد</button>
+    <button class="back-link" onclick="showRoles();showScreen('landing')">→ العودة لاختيار الدور</button>
+  </div>
+</div>
+
+<!-- ======================================================
+     STUDENT DASHBOARD
+====================================================== -->
+<div id="student-dash" class="screen">
+<div class="dashboard">
+  <aside class="sidebar">
+    <div class="sb-logo">
+      <div class="logo" onclick="showScreen('landing')">
+        <div class="logo-icon" style="width:36px;height:36px;border-radius:10px;"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div>
+        <div><div class="logo-text" style="font-size:18px;">SmartLearn HS</div><div class="logo-sub">بيئة تعلم إلكترونية</div></div>
+      </div>
+    </div>
+    <div class="sb-user">
+      <div class="av av-s">ن</div>
+      <div><div class="u-name" id="s-username">الطالب</div><div class="u-role" id="s-userrole">الأول الثانوي · علمي</div></div>
+    </div>
+    <div class="nav-sec">
+      <div class="nav-sec-title">الرئيسية</div>
+      <div class="nav-item active" onclick="sTab('home',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>الرئيسية
+      </div>
+      <div class="nav-item" onclick="sTab('performance',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2z"/><path d="M13 19v-6a2 2 0 012-2h2a2 2 0 012 2v6a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/><line x1="12" y1="4" x2="12" y2="10"/><line x1="8" y1="10" x2="16" y2="10"/></svg>تقرير الأداء
+      </div>
+      <div class="nav-item" onclick="sTab('subjects',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>موادي الدراسية
+      </div>
+      <div class="nav-item" onclick="sTab('ai',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>مساعد الذكاء الاصطناعي<span class="n-badge nb-ai">AI</span>
+      </div>
+      <div class="nav-item" onclick="sTab('tests',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>الاختبارات
+      </div>
+      <div class="nav-item" onclick="sTab('schedule',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>جدول الحصص
+      </div>
+      <div class="nav-item" onclick="sTab('messages',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>رسالة لمعلمي<span class="n-badge nb-live" id="msg-badge">2</span>
+      </div>
+    </div>
+    <div class="nav-sec">
+      <div class="nav-sec-title">الغرف</div>
+      <div class="nav-item" onclick="sTab('rooms',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>الغرف التفاعلية
+      </div>
+      <div class="nav-item" onclick="sTab('library',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>المكتبة
+      </div>
+      <div class="nav-item" onclick="openLiveBroadcast()" style="color:#E24B4A;font-weight:700;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M5 12a7 7 0 0114 0M2 12a10 10 0 0120 0"/></svg>البث المباشر — قناة مدرستنا<span class="n-badge nb-live" style="background:#E24B4A;color:#fff;"><span class="live-dot" style="width:6px;height:6px;background:#fff;"></span> LIVE</span>
+      </div>
+      <div class="nav-item" onclick="sTab('media',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>أرشيف قناة مدرستنا<span class="n-badge nb-live"><span class="live-dot" style="width:6px;height:6px;"></span></span>
+      </div>
+      <div class="nav-item" onclick="sTab('tarbawi',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>الإعلام التربوي
+      </div>
+    </div>
+    <div class="nav-sec">
+      <div class="nav-sec-title">تطوير المستوى</div>
+      <div class="nav-item" onclick="sTab('courses',this)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>الدورات التدريبية
+      </div>
+      <div class="nav-item" onclick="openModal('forum-modal')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2v-1"/><path d="M15 3H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l4-4h4a2 2 0 002-2V5a2 2 0 00-2-2z"/></svg>منتديات النقاش
+      </div>
+    </div>
+    <div class="sb-footer">
+      <button class="logout-btn" onclick="showScreen('landing')">تسجيل الخروج</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-title" id="s-page-title">الرئيسية</div>
+      <div class="topbar-actions">
+        <div class="ib" style="position:relative;" onclick="toggleNotif(this)">🔔<span class="nd"></span>
+          <div class="notif-panel" id="notif-student">
+            <div style="font-weight:700;font-size:13px;margin-bottom:10px;">الإشعارات</div>
+            <div class="notif-item"><div class="notif-dot"></div><div>درس جديد في البرمجة — الوحدة 2<div class="msg-time">منذ 10 دقائق</div></div></div>
+            <div class="notif-item"><div class="notif-dot"></div><div>نتيجة اختبارك جاهزة — 88%<div class="msg-time">منذ ساعة</div></div></div>
+            <div class="notif-item" style="opacity:.6;"><div style="width:8px;height:8px;border-radius:50%;background:var(--bdr2);flex-shrink:0;margin-top:4px;"></div><div>جلسة Zoom غداً 3:00م</div></div>
+          </div>
+        </div>
+        <div class="ib" onclick="openModal('level-modal')">📊</div>
+        <div class="ib" title="البحث">🔍</div>
+      </div>
+    </div>
+
+    <!-- HOME TAB -->
+    <div id="st-home" class="content">
+      <!-- Today's Focus -->
+      <div class="card anim d3" style="margin-bottom:18px;">
+        <div class="sec-title">تركيز اليوم 🎯</div>
+        <div class="col3" style="gap:16px;">
+          <div class="focus-card">
+            <div class="focus-icon" style="background:linear-gradient(135deg,#FFF0E6,#FFDCC4);">💻</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">البرمجة والذكاء الاصطناعي</div>
+              <div style="font-size:12px;color:var(--tx3);">المادة الموصى بها الآن</div>
+            </div>
+            <button class="btn-pr" onclick="openSubject('cs')">ابدأ الآن</button>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);">📖</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">الوحدة الثانية: القوانين والحقوق</div>
+              <div style="font-size:12px;color:var(--tx3);">الدرس التالي</div>
+            </div>
+            <button class="l-btn" onclick="continueLesson('cs')">تابع</button>
+          </div>
+          <div class="focus-card">
+            <div class="focus-icon" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);">🎯</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">إكمال 20% من الوحدة</div>
+              <div style="font-size:12px;color:var(--tx3);">الهدف اليومي</div>
+            </div>
+            <div class="prog-bar" style="margin-top:8px;"><div class="prog-fill" style="width:75%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subject Grades -->
+      <div class="card anim d4" style="margin-bottom:18px;">
+        <div class="sec-title">درجات المواد الحالية 📊</div>
+        <div class="col4" style="gap:14px;">
+          <div class="grade-card">
+            <div class="grade-icon" style="background:linear-gradient(135deg,#FFF0E6,#FFDCC4);">📖</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">العربية</div>
+              <div class="grade-score">9/10</div>
+              <div style="font-size:11px;color:var(--tx3);">ممتاز</div>
+            </div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-icon" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);">🔢</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">الرياضيات</div>
+              <div class="grade-score">8.5/10</div>
+              <div style="font-size:11px;color:var(--tx3);">جيد جداً</div>
+            </div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-icon" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);">🧪</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">الكيمياء</div>
+              <div class="grade-score">7/10</div>
+              <div style="font-size:11px;color:var(--tx3);">جيد</div>
+            </div>
+          </div>
+          <div class="grade-card">
+            <div class="grade-icon" style="background:linear-gradient(135deg,#F3E5F5,#E1BEE7);">💻</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">البرمجة</div>
+              <div class="grade-score">9.5/10</div>
+              <div style="font-size:11px;color:var(--tx3);">ممتاز</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- AI Recommendations -->
+      <div class="card anim d15" style="margin-bottom:18px;border:1px solid #E1D5FF;background:linear-gradient(135deg,#FAF5FF,#F0E6FF);">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,#7B3ADB,#9B5AE5);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">🤖</div>
+            <div>
+              <div style="font-size:15px;font-weight:700;">توصيات الذكاء الاصطناعي</div>
+              <div style="font-size:11px;color:var(--tx3);">دروس مقترحة ومراجعات مخصّصة حسب مستواك</div>
+            </div>
+          </div>
+          <button class="l-btn" onclick="renderAIRecommendations(true)" style="font-size:11px;">🔄 تحديث</button>
+        </div>
+        <div id="ai-recommendations" class="col2" style="margin-bottom:0;gap:10px;"></div>
+      </div>
+
+      <!-- Recent Activities -->
+      <div class="card anim d5" style="margin-bottom:18px;">
+        <div class="sec-title">الأنشطة الأخيرة 📅</div>
+        <div class="activity-list">
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#36B847;color:#fff;">✅</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;">أكملت درس "الوحدة الأولى" في البرمجة</div>
+              <div style="font-size:11px;color:var(--tx3);">منذ 2 ساعات</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#FF8C42;color:#fff;">📝</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;">حصلت على 95% في اختبار الرياضيات</div>
+              <div style="font-size:11px;color:var(--tx3);">أمس</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#7B3ADB;color:#fff;">🎮</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;">لعبت لعبة تعليمية في الفيزياء</div>
+              <div style="font-size:11px;color:var(--tx3);">منذ 3 أيام</div>
+            </div>
+          </div>
+          <div class="activity-item">
+            <div class="activity-icon" style="background:#E24B4A;color:#fff;">📺</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;">شاهدت بث مباشر لقناة مدرستنا</div>
+              <div style="font-size:11px;color:var(--tx3);">منذ أسبوع</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements -->
+      <div class="card anim d6" style="margin-bottom:18px;background:linear-gradient(135deg,#FFF9C4,#FFF59D);border:1px solid #FFE082;">
+        <div class="sec-title">الإنجازات والجوائز 🏆</div>
+        <div class="col3" style="gap:14px;">
+          <div class="achievement-card">
+            <div class="achievement-icon">⭐</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">أفضل طالب في البرمجة</div>
+              <div style="font-size:11px;color:var(--tx3);">حصلت على أعلى درجة في الاختبار</div>
+            </div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">🔥</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">سلسلة 7 أيام دراسة</div>
+              <div style="font-size:11px;color:var(--tx3);">درست يومياً لأسبوع كامل</div>
+            </div>
+          </div>
+          <div class="achievement-card">
+            <div class="achievement-icon">🎯</div>
+            <div>
+              <div style="font-size:14px;font-weight:700;margin-bottom:4px;">إكمال 50 درس</div>
+              <div style="font-size:11px;color:var(--tx3);">أكملت 50 درساً في المنصة</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Important Notes / Schedule -->
+      <div class="card anim d4">
+        <div class="sec-title">ملاحظات مهمة 📅</div>
+        <div class="notes-list">
+          <div class="note-item">
+            <div class="note-icon" style="background:#E24B4A;color:#fff;">📺</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;">بث مباشر — البرمجة والذكاء الاصطناعي</div>
+              <div style="font-size:11px;color:var(--tx3);">اليوم 3:00م · م. سارة أحمد</div>
+            </div>
+            <button class="zoom-btn blue" onclick="openLiveBroadcast()">انضم</button>
+          </div>
+          <div class="note-item">
+            <div class="note-icon" style="background:#FF8C42;color:#fff;">📝</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;">اختبار تحديد المستوى</div>
+              <div style="font-size:11px;color:var(--tx3);">بعد 2 أيام · الرياضيات</div>
+            </div>
+            <button class="btn-out" onclick="openQuizPicker('level')">استعد</button>
+          </div>
+          <div class="note-item">
+            <div class="note-icon" style="background:#36B847;color:#fff;">👥</div>
+            <div>
+              <div style="font-size:13px;font-weight:600;">جلسة مراجعة جماعية</div>
+              <div style="font-size:11px;color:var(--tx3);">غد 11:00ص · Zoom</div>
+            </div>
+            <button class="zoom-btn purple" onclick="window.open('https://zoom.us','_blank')">تذكير</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PERFORMANCE REPORT TAB -->
+    <div id="st-performance" class="content hidden">
+      <!-- Performance Report -->
+      <div class="card anim" style="margin-bottom:18px;background:linear-gradient(135deg,#FFF9C4,#FFF59D);border:1px solid #FFE082;">
+        <div style="text-align:center;margin-bottom:16px;">
+          <div style="font-size:32px;margin-bottom:8px;">📘</div>
+          <h1 style="font-size:24px;font-weight:800;margin-bottom:4px;">تقرير الأداء الدراسي</h1>
+          <p style="font-size:14px;color:var(--tx3);">تحليل شامل لأدائك الدراسي</p>
+        </div>
+        <div class="report-section">
+          <div class="report-item">
+            <div class="report-icon">🎯</div>
+            <div>
+              <div style="font-weight:700;">المستوى الحالي: متوسط</div>
+              <div style="font-size:12px;color:var(--tx3);margin-top:4px;">
+                مستواك الحالي متوسط لأنك:<br>
+                ✔ أنهيت أكثر من نصف المنهج<br>
+                ✔ درجاتك في الاختبارات جيدة<br>
+                ✔ تحتاج إلى زيادة سرعة الإنجاز للوصول لمستوى ممتاز
+              </div>
+            </div>
+          </div>
+          <div class="report-item">
+            <div class="report-icon">📝</div>
+            <div>
+              <div style="font-weight:700;">الاختبارات</div>
+              <div style="font-size:12px;color:var(--tx3);margin-top:4px;">
+                تم حل 8 اختبارات من أصل 10<br>
+                متوسط الدرجات: 88 من 100<br>
+                الاختبارات المتبقية: 2 اختبار
+              </div>
+            </div>
+          </div>
+          <div class="report-item">
+            <div class="report-icon">📚</div>
+            <div>
+              <div style="font-weight:700;">المواد الدراسية</div>
+              <div style="font-size:12px;color:var(--tx3);margin-top:4px;">
+                تم الانتهاء من 5 مواد من أصل 8<br>
+                المواد الجارية: 2 مادة<br>
+                المواد التي لم تبدأ بعد: 1 مادة
+              </div>
+            </div>
+          </div>
+          <div class="report-item">
+            <div class="report-icon">⏰</div>
+            <div>
+              <div style="font-weight:700;">معدل الدراسة</div>
+              <div style="font-size:12px;color:var(--tx3);margin-top:4px;">
+                متوسط المذاكرة اليومية: 4.5 ساعة<br>
+                إجمالي ساعات الدراسة هذا الأسبوع: 27 ساعة
+              </div>
+            </div>
+          </div>
+          <div class="report-item">
+            <div class="report-icon">📈</div>
+            <div>
+              <div style="font-weight:700;">نسبة الإنجاز</div>
+              <div style="font-size:12px;color:var(--tx3);margin-top:4px;">
+                نسبة إكمال المنهج: 67%<br>
+                مستوى الإتقان: جيد<br>
+                معدل التقدم: أعلى من الأسبوع الماضي بنسبة 12%
+              </div>
+            </div>
+          </div>
+          <div class="report-item">
+            <div class="report-icon">🔔</div>
+            <div>
+              <div style="font-weight:700;">القادم</div>
+              <div style="font-size:12px;color:var(--tx3);margin-top:4px;">
+                أقرب اختبار بعد: 3 أيام<br>
+                المطلوب هذا الأسبوع: إنهاء مادتين + مراجعة اختبار
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn-pr" style="width:100%;margin-top:16px;" onclick="sTab('home',null)">العودة للرئيسية ←</button>
+      </div>
+
+      <!-- Performance Cards -->
+      <div class="stats-grid anim d1">
+        <div class="stat-card stat-ring-card">
+          <div class="ring-wrapper">
+            <svg viewBox="0 0 110 110"><circle class="ring-bg" cx="55" cy="55" r="44"/></svg>
+            <svg viewBox="0 0 110 110"><circle id="home-ring-fill" class="ring-fill" cx="55" cy="55" r="44"/></svg>
+            <div class="ring-text"><span>67%</span><small>إنجاز</small></div>
+          </div>
+          <div class="stat-label">نسبة إكمال المنهج</div>
+          <div class="stat-trend tu">↑ 12%</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-o">📊</div>
+          <div class="stat-val">متوسط</div>
+          <div class="stat-label">المستوى الحالي</div>
+          <div class="prog-bar" style="margin-top:8px;"><div class="prog-fill" style="width:62.5%"></div></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-g">⏰</div>
+          <div class="stat-val">4.5</div>
+          <div class="stat-label">ساعات الدراسة اليوم</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon si-p">⭐</div>
+          <div class="stat-val">88%</div>
+          <div class="stat-label">معدل الاختبارات</div>
+          <div class="stat-trend tu">↑ جيد</div>
+        </div>
+      </div>
+
+      <!-- Charts Section -->
+      <div class="charts-grid anim d2">
+        <div class="chart-card orange-card">
+          <div class="chart-head"><div>حالة المواد الدراسية</div><span>الحالة الحالية</span></div>
+          <div class="chart-body">
+            <div class="pie-chart" id="study-pie" style="background:conic-gradient(#36B847 0 62.5%, #FF8C42 62.5% 87.5%, #E24B4A 87.5% 100%);">
+              <div class="pie-core" id="study-pie-core">62.5%<span>مكتملة</span></div>
+            </div>
+            <div class="chart-legend" id="study-legend">
+              <div><span class="legend-dot" style="background:#36B847"></span>مكتملة — 62.5%</div>
+              <div><span class="legend-dot" style="background:#FF8C42"></span>جارية — 25%</div>
+              <div><span class="legend-dot" style="background:#E24B4A"></span>لم تبدأ — 12.5%</div>
+            </div>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-head"><div>أداء الاختبارات</div><span>الأسابيع الماضية</span></div>
+          <div class="chart-switcher">
+            <button class="small-btn active" data-set="general" onclick="updateHomeCharts('general')">عام</button>
+            <button class="small-btn" data-set="math" onclick="updateHomeCharts('math')">رياضيات</button>
+            <button class="small-btn" data-set="science" onclick="updateHomeCharts('science')">علوم</button>
+            <button class="small-btn" data-set="arabic" onclick="updateHomeCharts('arabic')">عربي</button>
+          </div>
+          <div class="chart-body chart-body--line">
+            <div class="line-chart">
+              <svg viewBox="0 0 320 170" aria-hidden="true" id="home-line-svg">
+                <defs><linearGradient id="lineGrad" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#F97316"/><stop offset="100%" stop-color="#EA580C"/></linearGradient></defs>
+                <path id="home-line-path" d="M30 145 L80 120 L130 100 L180 90 L230 100 L280 75" fill="none" stroke="url(#lineGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <g stroke="#E5A88A" stroke-width="1" opacity=".4">
+                  <line x1="20" y1="145" x2="300" y2="145"/>
+                  <line x1="20" y1="125" x2="300" y2="125"/>
+                  <line x1="20" y1="105" x2="300" y2="105"/>
+                  <line x1="20" y1="85" x2="300" y2="85"/>
+                </g>
+                <circle class="home-line-dot" cx="30" cy="145" r="5" fill="#F97316"/>
+                <circle class="home-line-dot" cx="80" cy="120" r="5" fill="#F97316"/>
+                <circle class="home-line-dot" cx="130" cy="100" r="5" fill="#F97316"/>
+                <circle class="home-line-dot" cx="180" cy="90" r="5" fill="#F97316"/>
+                <circle class="home-line-dot" cx="230" cy="100" r="5" fill="#F97316"/>
+                <circle class="home-line-dot" cx="280" cy="75" r="5" fill="#F97316"/>
+                <text x="30" y="165" text-anchor="middle" font-size="10" fill="#6B5A4E">اختبار 1</text>
+                <text x="80" y="165" text-anchor="middle" font-size="10" fill="#6B5A4E">2</text>
+                <text x="130" y="165" text-anchor="middle" font-size="10" fill="#6B5A4E">3</text>
+                <text x="180" y="165" text-anchor="middle" font-size="10" fill="#6B5A4E">4</text>
+                <text x="230" y="165" text-anchor="middle" font-size="10" fill="#6B5A4E">5</text>
+                <text x="280" y="165" text-anchor="middle" font-size="10" fill="#6B5A4E">6</text>
+              </svg>
+            </div>
+            <div class="chart-summary">
+              <div><strong id="home-line-score">71%</strong> متوسط الأداء</div>
+              <div id="home-line-description">مستوى عالٍ مع تراجع طفيف في الاختبار الأخير.</div>
+              <div class="trend-tag td" id="home-line-trend">📉 نازل</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBJECTS TAB -->
+    <div id="st-subjects" class="content hidden">
+      <div style="margin-bottom:16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+        <div>
+          <h3 style="font-size:16px;font-weight:700;">موادي الدراسية</h3>
+          <p style="font-size:12px;color:var(--tx3);" id="spec-label">الأول الثانوي</p>
+        </div>
+        <div id="my-level-display" style="padding:8px 16px;background:var(--prl);border-radius:50px;font-size:12px;font-weight:700;color:var(--prd);">مستواك العام: متوسط</div>
+      </div>
+      <div id="subjects-grid" class="col3"></div>
+    </div>
+
+    <!-- AI TAB -->
+    <div id="st-ai" class="content hidden">
+      <div class="ai-chat" style="max-height:calc(100vh - 120px);">
+        <div class="ai-head" style="background:linear-gradient(135deg,#7B3ADB,#9B5AE5);">
+          <div class="ai-av">🤖</div>
+          <div><div class="ai-title">SmartLearn HS AI Assistant</div><div class="ai-status">شرح · تحليل · اقتراح محتوى · دعم تربوي</div></div>
+          <div style="margin-right:auto;display:flex;gap:6px;">
+            <div style="padding:4px 10px;background:rgba(255,255,255,.15);border-radius:50px;font-size:10px;color:#fff;">🎤 صوت</div>
+            <div style="padding:4px 10px;background:rgba(255,255,255,.15);border-radius:50px;font-size:10px;color:#fff;">📸 صورة</div>
+          </div>
+        </div>
+        <div class="ai-msgs" id="full-msgs" style="height:calc(100vh - 260px);">
+          <div class="msg ai">مرحباً! 🎓 أنا مساعدك الذكي على منصة SmartLearn HS.<br><br>يمكنني مساعدتك في:<br>📚 شرح أي درس أو مفهوم دراسي<br>🏫 إنشاء حساب أو الدخول للمنصة<br>💡 نصائح للمذاكرة والامتحانات<br>❓ أي سؤال عام<br><br>اكتب ما تريد وسأجاوبك فوراً! 😊</div>
+        </div>
+        <div style="padding:6px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--bdr);background:#fafafa;">
+          <button class="qr-chip" onclick="openAIGen('explain')" style="background:linear-gradient(135deg,#7B3ADB,#9B5AE5);color:#fff;border-color:transparent;">🤖 ولّد محتوى</button>
+          <button class="qr-chip" onclick="quickAsk('full','كيف أنشئ حساب على المنصة؟')">🆕 إنشاء حساب</button>
+          <button class="qr-chip" onclick="quickAsk('full','كيف أسجل الدخول؟')">🔐 تسجيل الدخول</button>
+          <button class="qr-chip" onclick="quickAsk('full','ما هي المنصة؟')">🏫 عن المنصة</button>
+          <button class="qr-chip" onclick="quickAsk('full','كيف أذاكر؟')">📚 نصيحة دراسية</button>
+          <button class="qr-chip" onclick="quickAsk('full','نصائح للامتحان')">✍️ نصائح الامتحان</button>
+        </div>
+        <div class="ai-row"><input class="ai-inp" id="full-inp" placeholder="اكتب سؤالك..." onkeydown="if(event.key==='Enter')sendAI('full')"><button class="ai-snd" onclick="sendAI('full')">→</button></div>
+      </div>
+    </div>
+
+    <!-- TESTS TAB -->
+    <div id="st-tests" class="content hidden">
+      <div class="sec-title">الاختبارات</div>
+      <p style="font-size:13px;color:var(--tx2);margin-bottom:16px;">اختر نوع الاختبار ثم حدّد المادة لبدء الأسئلة</p>
+      <div class="col3">
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openQuizPicker('level')">
+          <div style="font-size:36px;margin-bottom:10px;">📝</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">اختبار تحديد المستوى</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:14px;">5 أسئلة لكل مادة لتحديد مستواك</div>
+          <button class="btn-pr" style="font-size:12px;padding:9px 20px;" onclick="event.stopPropagation();openQuizPicker('level')">اختر المادة</button>
+        </div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openQuizPicker('quick')">
+          <div style="font-size:36px;margin-bottom:10px;">⚡</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">اختبار سريع</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:14px;">5 أسئلة · أقل من 5 دقائق</div>
+          <button class="btn-out" style="font-size:12px;padding:9px 20px;" onclick="event.stopPropagation();openQuizPicker('quick')">اختر المادة</button>
+        </div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openQuizPicker('adaptive')">
+          <div style="font-size:36px;margin-bottom:10px;">🎯</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">اختبار تكيفي AI</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:14px;">يتكيف مع مستواك تلقائياً</div>
+          <button class="btn-pr" style="font-size:12px;padding:9px 20px;" onclick="event.stopPropagation();openQuizPicker('adaptive')">اختر المادة</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="sec-title">نتائج الاختبارات</div>
+        <table class="dt">
+          <thead><tr><th>الاختبار</th><th>المادة</th><th>الدرجة</th><th>التاريخ</th><th>التقييم</th></tr></thead>
+          <tbody>
+            <tr><td>اختبار الوحدة 1</td><td>برمجة وذكاء اصطناعي</td><td>88%</td><td>15 يناير 2025</td><td><span class="badge b-suc">ممتاز</span></td></tr>
+            <tr><td>اختبار سريع</td><td>الرياضيات</td><td>72%</td><td>12 يناير 2025</td><td><span class="badge b-warn">جيد</span></td></tr>
+            <tr><td>اختبار قبلي</td><td>الكيمياء</td><td>65%</td><td>10 يناير 2025</td><td><span class="badge b-info">متوسط</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- SCHEDULE TAB -->
+    <div id="st-schedule" class="content hidden">
+      <div class="sec-title">جدول الحصص الأسبوعي</div>
+      <div class="card" style="overflow-x:auto;">
+        <table class="schedule" style="min-width:700px;">
+          <thead><tr><th>الوقت</th><th>السبت</th><th>الأحد</th><th>الاثنين</th><th>الثلاثاء</th><th>الأربعاء</th><th>الخميس</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;font-size:12px;color:var(--tx2);">8:00 - 9:00</td><td><div class="sched-lesson">🔢 رياضيات</div><div style="font-size:10px;color:var(--tx3);">م. أحمد</div></td><td><div class="sched-lesson blue">💻 برمجة AI</div><div style="font-size:10px;color:var(--tx3);">م. سارة</div></td><td><div class="sched-lesson green">📖 عربي</div></td><td><div class="sched-lesson">🧪 كيمياء</div></td><td><div class="sched-lesson blue">💻 برمجة AI</div></td><td><div class="sched-lesson">🔢 رياضيات</div></td></tr>
+            <tr><td style="font-weight:700;font-size:12px;color:var(--tx2);">9:00 - 10:00</td><td><div class="sched-lesson green">📖 عربي</div></td><td><div class="sched-lesson">🧪 كيمياء</div></td><td><div class="sched-lesson">⚡ فيزياء</div></td><td><div class="sched-lesson blue">💻 برمجة AI</div></td><td><div class="sched-lesson green">📖 عربي</div></td><td><div class="sched-lesson">🧪 كيمياء</div></td></tr>
+            <tr><td style="font-weight:700;font-size:12px;color:var(--tx2);">11:00 - 12:00</td><td><div class="sched-lesson">⚡ فيزياء</div></td><td><div class="sched-lesson">🔢 رياضيات</div></td><td><div class="sched-lesson blue">💻 برمجة AI</div></td><td><div class="sched-lesson green">📖 عربي</div></td><td><div class="sched-lesson">🇬🇧 إنجليزي</div></td><td><div class="sched-lesson green">🦠 أحياء</div></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="card" style="margin-top:18px;">
+        <div class="sec-title">مواعيد البث المباشر القادمة</div>
+        <table class="dt">
+          <thead><tr><th>الموضوع</th><th>المادة</th><th>المعلم</th><th>الوقت</th><th>المنصة</th><th>الانضمام</th></tr></thead>
+          <tbody>
+            <tr><td>الوحدة 2 — التعلم الآلي</td><td>برمجة AI</td><td>م. سارة أحمد</td><td>اليوم 3:00م</td><td><span class="badge b-info">Zoom</span></td><td><button class="zoom-btn blue" style="font-size:11px;padding:6px 14px;" onclick="window.open('https://zoom.us','_blank')">انضم الآن</button></td></tr>
+            <tr><td>المصفوفات والمحددات</td><td>رياضيات</td><td>م. محمود</td><td>غد 11:00ص</td><td><span class="badge" style="background:#EDE7F6;color:#4527A0;">Teams</span></td><td><button class="zoom-btn purple" style="font-size:11px;padding:6px 14px;" onclick="window.open('https://teams.microsoft.com','_blank')">انضم</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MESSAGES TAB -->
+    <div id="st-messages" class="content hidden">
+      <div class="sec-title">التواصل مع المعلمين</div>
+      <div class="col2">
+        <div class="msg-compose">
+          <div class="msg-head"><div style="font-size:13px;font-weight:700;">رسائل واردة</div><span class="badge b-org">2 جديدة</span></div>
+          <div class="msg-list">
+            <div class="msg-item"><div class="msg-sender">م. سارة أحمد — برمجة AI</div><div class="msg-text">أداؤك في الاختبار الأخير ممتاز! تابعي الوحدة الثانية بنفس الاجتهاد 💪</div><div class="msg-time">منذ 2 ساعة</div></div>
+            <div class="msg-item"><div class="msg-sender">م. محمود — رياضيات</div><div class="msg-text">موعد الجلسة التعويضية يوم الخميس 12:00م عبر Zoom</div><div class="msg-time">أمس</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-title">إرسال رسالة لمعلم</div>
+          <div class="f-group"><label class="f-label">اختر المعلم</label>
+            <select class="f-sel"><option>م. سارة أحمد — برمجة AI</option><option>م. محمود — رياضيات</option><option>م. فاطمة — عربي</option></select>
+          </div>
+          <div class="f-group"><label class="f-label">الموضوع</label><input class="f-inp" type="text" placeholder="عنوان الرسالة"></div>
+          <div class="f-group"><label class="f-label">الرسالة</label><textarea class="f-inp" rows="4" placeholder="اكتب رسالتك هنا..."></textarea></div>
+          <button class="btn-pr" style="width:100%;padding:12px;" onclick="alert('تم إرسال الرسالة بنجاح! ✓')">إرسال الرسالة</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ROOMS TAB -->
+    <div id="st-rooms" class="content hidden">
+      <div class="sec-title">الغرف التفاعلية</div>
+      <div class="col3">
+        <div class="room-card" onclick="openLabForSpec()">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#FFF0E6,#FFDCC4);">🧪</div><div><div class="room-title">المعمل الافتراضي</div><div class="room-sub">محاكاة تجارب علمية تفاعلية</div></div></div>
+          <div class="room-foot"><span>كيمياء · فيزياء · أحياء</span><button class="room-btn" onclick="event.stopPropagation();openLabForSpec()">دخول</button></div>
+        </div>
+        <div class="room-card" onclick="openLiveBroadcast()">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#FEECEC,#FFB3B3);">📡</div><div><div class="room-title">البث المباشر — قناة مدرستنا</div><div class="room-sub"><span class="live-dot"></span> stream.moe.gov.eg</div></div></div>
+          <div class="room-foot"><span>بث رسمي مباشر</span><button class="room-btn" style="background:#E24B4A;" onclick="event.stopPropagation();openLiveBroadcast()">شاهد الآن</button></div>
+        </div>
+        <div class="room-card" onclick="sTab('media',null)">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#FFE0B2,#FFCC80);">🎞️</div><div><div class="room-title">أرشيف قناة مدرستنا</div><div class="room-sub">حلقات مسجّلة سابقاً</div></div></div>
+          <div class="room-foot"><span>كل الحلقات التعليمية</span><button class="room-btn" style="background:#E67E22;" onclick="event.stopPropagation();sTab('media',null)">دخول</button></div>
+        </div>
+        <div class="room-card" onclick="openModal('code-lab-modal')">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#F3E5F5,#E1BEE7);">💻</div><div><div class="room-title">معمل البرمجة</div><div class="room-sub">كتابة وتشغيل الأكواد</div></div></div>
+          <div class="room-foot"><span>Python · Scratch · AI</span><button class="room-btn" onclick="event.stopPropagation();openModal('code-lab-modal')">دخول</button></div>
+        </div>
+        <div class="room-card" onclick="openGamesWithCheck()">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#FFF9C4,#FFF59D);">🎮</div><div><div class="room-title">الألعاب التعليمية</div><div class="room-sub">تعلّم من خلال اللعب</div></div></div>
+          <div class="room-foot"><span>نقاط ومكافآت</span><button class="room-btn" onclick="event.stopPropagation();openGamesWithCheck()">العب</button></div>
+        </div>
+        <div class="room-card" onclick="sTab('tarbawi',null)">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);">🌟</div><div><div class="room-title">الإعلام التربوي</div><div class="room-sub">قيم ونصائح وتوجيه</div></div></div>
+          <div class="room-foot"><span>محتوى تربوي يومي</span><button class="room-btn" onclick="event.stopPropagation();sTab('tarbawi',null)">استكشفي</button></div>
+        </div>
+        <div class="room-card" onclick="openModal('forum-modal')">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);">💬</div><div><div class="room-title">منتديات النقاش</div><div class="room-sub">أسئلة ونقاشات تعليمية</div></div></div>
+          <div class="room-foot"><span>تبادل المعرفة</span><button class="room-btn" onclick="event.stopPropagation();openModal('forum-modal')">دخول</button></div>
+        </div>
+        <div class="room-card" onclick="openModelsForSpec()">
+          <div class="room-head"><div class="room-ico" style="background:linear-gradient(135deg,#F0E6FF,#D4B8FF);">🏛️</div><div><div class="room-title">نماذج ومجسمات</div><div class="room-sub">مجسمات تفاعلية ثلاثية الأبعاد</div></div></div>
+          <div class="room-foot"><span>تاريخ · علوم · فيزياء</span><button class="room-btn" onclick="event.stopPropagation();openModelsForSpec()">استكشفي</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIBRARY / KNOWLEDGE BANK TAB -->
+    <div id="st-library" class="content hidden">
+      <div class="sec-title">بنك المعرفة المصري</div>
+      <p style="font-size:13px;color:var(--tx2);margin-bottom:18px;">روابط رسمية معتمدة من وزارة التربية والتعليم — كل المصادر التعليمية في مكان واحد</p>
+
+      <div class="col3" style="margin-bottom:20px;">
+        <div class="card" style="cursor:pointer;text-align:center;border-right:4px solid #1B6DB5;" onclick="window.open('https://www.ekb.eg/ar/home','_blank')">
+          <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#E6F4FF,#B8D9FF);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px;">🏛️</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">بنك المعرفة المصري</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:10px;">www.ekb.eg — البوابة الرسمية</div>
+          <span class="badge b-info">رسمي</span>
+        </div>
+        <div class="card" style="cursor:pointer;text-align:center;border-right:4px solid #FF8C42;" onclick="window.open('https://madrasetnaplus.eg/courses;NavigateCoursesTypes=Row;selectedIndex=307691','_blank')">
+          <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#FFF0E6,#FFD6B8);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px;">🎓</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">منصة مدرستنا Plus</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:10px;">دورات الأول الثانوي</div>
+          <span class="badge b-org">دورات</span>
+        </div>
+        <div class="card" style="cursor:pointer;text-align:center;border-right:4px solid #36B847;" onclick="window.open('https://ellibrary.moe.gov.eg/books/','_blank')">
+          <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#E6FFE8,#B8F0BB);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px;">📚</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">الكتب الدراسية</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:10px;">ellibrary.moe.gov.eg/books</div>
+          <span class="badge b-suc">PDF</span>
+        </div>
+        <div class="card" style="cursor:pointer;text-align:center;border-right:4px solid #7B3ADB;" onclick="window.open('https://ellibrary.moe.gov.eg/sec3guideforms/','_blank')">
+          <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#F0E6FF,#D4B8FF);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px;">📝</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">النماذج الاسترشادية</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:10px;">امتحانات تجريبية رسمية</div>
+          <span class="badge" style="background:#F0E6FF;color:#7B3ADB;">امتحانات</span>
+        </div>
+        <div class="card" style="cursor:pointer;text-align:center;border-right:4px solid #E67E22;" onclick="window.open('https://stream.moe.gov.eg/?fbclid=IwAR0WDjxBIq58Kn9b0eTQ5LzLFDluG-9GwxVDLtNAqT4vZ0b7csDXU3lXRaQ','_blank')">
+          <div style="width:64px;height:64px;border-radius:18px;background:linear-gradient(135deg,#FEECEC,#FFB3B3);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 12px;">📡</div>
+          <div style="font-weight:700;font-size:14px;margin-bottom:5px;">منصة البث المباشر الرسمية</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:10px;">stream.moe.gov.eg — الحصص الافتراضية</div>
+          <span class="badge b-live" style="background:#E24B4A;color:#fff;">LIVE</span>
+        </div>
+      </div>
+
+      <div class="card" style="margin-top:18px;background:linear-gradient(135deg,#1B6DB5,#3B8FDB);color:#fff;">
+        <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+          <div style="font-size:36px;">🔴</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="font-size:15px;font-weight:700;margin-bottom:4px;">منصة البث المباشر الرسمية</div>
+            <div style="font-size:12px;opacity:.85;">stream.moe.gov.eg — الحصص الافتراضية لوزارة التربية والتعليم</div>
+          </div>
+          <button class="btn-pr" onclick="window.open('https://stream.moe.gov.eg/?fbclid=IwAR0WDjxBIq58Kn9b0eTQ5LzLFDluG-9GwxVDLtNAqT4vZ0b7csDXU3lXRaQ','_blank')" style="background:#fff;color:#1B6DB5;">شاهد البث →</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MEDIA / ARCHIVE TAB -->
+    <div id="st-media" class="content hidden">
+      <div class="bcast-card" style="margin-bottom:18px;">
+        <div style="font-size:14px;opacity:.8;margin-bottom:6px;position:relative;z-index:1;">📺 البث المباشر لقناة مدرستنا</div>
+        <h2 style="font-size:22px;font-weight:900;margin-bottom:8px;position:relative;z-index:1;">قناة درستنا 📺</h2>
+        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(226,75,74,.25);border:1px solid rgba(226,75,74,.4);border-radius:50px;padding:5px 14px;margin-bottom:14px;position:relative;z-index:1;"><span class="live-dot"></span><span style="font-size:12px;font-weight:700;color:#ffb3b3;">🔴 تحت الإنشاء</span></div>
+        <p style="opacity:.75;font-size:13px;margin-bottom:18px;position:relative;z-index:1;">سيتم تفعيل البث المباشر للقناة قريباً — تابعونا على يوتيوب للمزيد من الحلقات التعليمية</p>
+        <button class="btn-pr" onclick="window.open('https://www.youtube.com/@medrasatona','_blank')" style="position:relative;z-index:1;">▶ قناة مدرستنا على يوتيوب</button>
+      </div>
+      <div class="sec-title">أرشيف حلقات البرمجة والذكاء الاصطناعي — الأول الثانوي</div>
+      <div class="col3">
+        <div class="video-card" onclick="window.open('https://drive.google.com/file/d/1areMaXg2LpX4F9UWHJK49tLtP_4CCwYY/view','_blank')">
+          <div class="video-thumb"><div class="play-btn">▶</div></div>
+          <div class="video-info"><div class="video-title">الدرس الأول — مقدمة في الذكاء الاصطناعي</div><div class="video-meta">الوحدة 1 · برمجة AI · الأول الثانوي</div></div>
+        </div>
+        <div class="video-card" onclick="window.open('https://drive.google.com/file/d/19smzLFXCkDKTGMmtCWDW1yi1ck9DUw4V/view','_blank')">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#1a2e1a,#2d5e2d);"><div class="play-btn">▶</div></div>
+          <div class="video-info"><div class="video-title">الدرس الثاني — خوارزميات الذكاء الاصطناعي</div><div class="video-meta">الوحدة 1 · برمجة AI · الأول الثانوي</div></div>
+        </div>
+        <div class="video-card" onclick="window.open('https://drive.google.com/file/d/1ajl4JZaYJYAc4D05v8X8vyXvHfFObnHA/view','_blank')">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#1a1a2e,#2e2d5e);"><div class="play-btn">▶</div></div>
+          <div class="video-info"><div class="video-title">الدرس الثالث — التعلم الآلي</div><div class="video-meta">الوحدة 1 · برمجة AI · الأول الثانوي</div></div>
+        </div>
+        <div class="video-card" onclick="window.open('https://drive.google.com/file/d/1yWDLfeSVVh2CrA0fBNQwC1arVOCmhlm4/view','_blank')">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#2e1a1a,#5e2d2d);"><div class="play-btn">▶</div></div>
+          <div class="video-info"><div class="video-title">الدرس الرابع — Python للذكاء الاصطناعي</div><div class="video-meta">الوحدة 2 · برمجة AI · الأول الثانوي</div></div>
+        </div>
+        <div class="video-card" onclick="window.open('https://www.youtube.com/@medrasatona','_blank')">
+          <div class="video-thumb" style="background:linear-gradient(135deg,#1a2e1a,#3d5e1a);"><div class="play-btn">▶</div></div>
+          <div class="video-info"><div class="video-title">قناة مدرستنا — المزيد من الحلقات</div><div class="video-meta">قناة رسمية على YouTube</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COURSES TAB -->
+    <div id="st-courses" class="content hidden">
+      <div style="margin-bottom:20px;"><h3 style="font-size:16px;font-weight:700;">الدورات التدريبية</h3><p style="font-size:12px;color:var(--tx3);margin-top:4px;">دورات مقترحة لتحسين مستواك بناءً على نتائجك</p></div>
+      <div id="courses-list" style="display:flex;flex-direction:column;gap:14px;">
+        <div class="course-card">
+          <div class="course-ico" style="background:linear-gradient(135deg,#FFF0E6,#FFDCC4);">📚</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px;">تقوية قواعد اللغة العربية</div>
+            <div style="font-size:12px;color:var(--tx3);margin-bottom:8px;">اللغة العربية · للمستوى المتوسط · 6 ساعات</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="badge b-warn">متوسط</span>
+              <span class="badge b-info">6 حصص</span>
+            </div>
+          </div>
+          <button class="btn-pr" style="font-size:12px;padding:8px 16px;align-self:center;" onclick="window.open('https://www.youtube.com/results?search_query=قواعد+اللغة+العربية+الأول+الثانوي','_blank')">ابدأ الدورة</button>
+        </div>
+        <div class="course-card">
+          <div class="course-ico" style="background:linear-gradient(135deg,#E3F2FD,#BBDEFB);">🔢</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px;">مراجعة أساسيات الرياضيات</div>
+            <div style="font-size:12px;color:var(--tx3);margin-bottom:8px;">الرياضيات · للمستوى الضعيف والمتوسط · 8 ساعات</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="badge b-info">مبتدئ</span>
+              <span class="badge b-info">8 حصص</span>
+            </div>
+          </div>
+          <button class="btn-pr" style="font-size:12px;padding:8px 16px;align-self:center;" onclick="window.open('https://www.youtube.com/results?search_query=رياضيات+الأول+الثانوي+مصر','_blank')">ابدأ الدورة</button>
+        </div>
+        <div class="course-card">
+          <div class="course-ico" style="background:linear-gradient(135deg,#FFF0E6,#FFDCC4);">💻</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px;">مدخل للبرمجة بلغة Python</div>
+            <div style="font-size:12px;color:var(--tx3);margin-bottom:8px;">البرمجة والذكاء الاصطناعي · للجميع · 10 ساعات</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="badge b-suc">مفتوح</span>
+              <span class="badge b-info">10 حصص</span>
+            </div>
+          </div>
+          <button class="btn-pr" style="font-size:12px;padding:8px 16px;align-self:center;" onclick="window.open('https://www.youtube.com/results?search_query=تعلم+python+للمبتدئين+بالعربي','_blank')">ابدأ الدورة</button>
+        </div>
+        <div class="course-card">
+          <div class="course-ico" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);">🔬</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px;">أساسيات العلوم المتكاملة</div>
+            <div style="font-size:12px;color:var(--tx3);margin-bottom:8px;">العلوم المتكاملة · علمي · 7 ساعات</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="badge b-warn">متوسط</span>
+              <span class="badge b-info">7 حصص</span>
+            </div>
+          </div>
+          <button class="btn-pr" style="font-size:12px;padding:8px 16px;align-self:center;" onclick="window.open('https://www.youtube.com/results?search_query=العلوم+المتكاملة+أول+ثانوي','_blank')">ابدأ الدورة</button>
+        </div>
+        <div class="course-card">
+          <div class="course-ico" style="background:linear-gradient(135deg,#FFF3E0,#FFE0B2);">🌍</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px;">تحسين مهارات اللغة الإنجليزية</div>
+            <div style="font-size:12px;color:var(--tx3);margin-bottom:8px;">اللغة الإنجليزية · للجميع · 12 ساعة</div>
+            <div style="display:flex;gap:6px;flex-wrap:wrap;">
+              <span class="badge b-suc">مفتوح</span>
+              <span class="badge b-info">12 حصة</span>
+            </div>
+          </div>
+          <button class="btn-pr" style="font-size:12px;padding:8px 16px;align-self:center;" onclick="window.open('https://www.youtube.com/results?search_query=english+for+egyptian+students+secondary','_blank')">ابدأ الدورة</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TARBAWI TAB -->
+    <div id="st-tarbawi" class="content hidden">
+      <div class="sec-title">الإعلام التربوي</div>
+      <div class="col3" style="margin-bottom:20px;">
+        <div class="tarbawi-card" onclick="window.open('https://www.youtube.com/results?search_query=قيم+تربوية+للمراهقين','_blank')"><div style="font-size:32px;margin-bottom:10px;">💚</div><div style="font-weight:700;font-size:14px;margin-bottom:5px;">القيم والأخلاق</div><div style="font-size:11px;opacity:.8;">مقاطع فيديو تربوية يومية</div></div>
+        <div class="tarbawi-card" style="background:linear-gradient(135deg,#1a0d3b,#2d1b69);" onclick="window.open('https://www.youtube.com/results?search_query=إدارة+الوقت+للطلاب','_blank')"><div style="font-size:32px;margin-bottom:10px;">⏰</div><div style="font-weight:700;font-size:14px;margin-bottom:5px;">إدارة الوقت</div><div style="font-size:11px;opacity:.8;">مهارات التنظيم والتخطيط</div></div>
+        <div class="tarbawi-card" style="background:linear-gradient(135deg,#1a1a0d,#3b3b1a);" onclick="window.open('https://www.youtube.com/results?search_query=الصحة+النفسية+للمراهقين','_blank')"><div style="font-size:32px;margin-bottom:10px;">🧘</div><div style="font-weight:700;font-size:14px;margin-bottom:5px;">الصحة النفسية</div><div style="font-size:11px;opacity:.8;">التوازن والضبط النفسي</div></div>
+      </div>
+      <div class="col2">
+        <div class="card">
+          <div class="sec-title">فيديوهات تربوية مقترحة</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="skill-card" onclick="window.open('https://www.youtube.com/results?search_query=إدارة+الوقت+للطلاب+الثانوي','_blank')" style="display:flex;align-items:center;gap:12px;padding:12px;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,var(--pr),var(--prd));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">▶</div>
+              <div><div style="font-size:13px;font-weight:600;">كيف تديري وقتك بفاعلية؟</div><div style="font-size:11px;color:var(--tx3);">8 دقائق · تربوي</div></div>
+            </div>
+            <div class="skill-card" onclick="window.open('https://www.youtube.com/results?search_query=كيف+تحفز+نفسك+على+الدراسة','_blank')" style="display:flex;align-items:center;gap:12px;padding:12px;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#7B3ADB,#9B5AE5);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">▶</div>
+              <div><div style="font-size:13px;font-weight:600;">سر الدافعية للدراسة</div><div style="font-size:11px;color:var(--tx3);">12 دقيقة · تحفيزي</div></div>
+            </div>
+            <div class="skill-card" onclick="window.open('https://www.youtube.com/results?search_query=مهارات+التفكير+النقدي+للطلاب','_blank')" style="display:flex;align-items:center;gap:12px;padding:12px;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#36B847,#1B8A30);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">▶</div>
+              <div><div style="font-size:13px;font-weight:600;">مهارات التفكير الناقد</div><div style="font-size:11px;color:var(--tx3);">15 دقيقة · مهاراتي</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-title">فيديوهات لتنمية المهارات</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="skill-card" onclick="window.open('https://www.youtube.com/results?search_query=تعلم+البرمجة+للمبتدئين+بالعربي','_blank')" style="display:flex;align-items:center;gap:12px;padding:12px;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#1B5FA5,#3B8FDB);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">💻</div>
+              <div><div style="font-size:13px;font-weight:600;">تعلم البرمجة من الصفر</div><div style="font-size:11px;color:var(--tx3);">سلسلة تعليمية · مهاراتي</div></div>
+            </div>
+            <div class="skill-card" onclick="window.open('https://www.youtube.com/results?search_query=مهارات+القيادة+للشباب','_blank')" style="display:flex;align-items:center;gap:12px;padding:12px;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#E65100,var(--pr));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🌟</div>
+              <div><div style="font-size:13px;font-weight:600;">مهارات القيادة للشباب</div><div style="font-size:11px;color:var(--tx3);">10 دقائق · قيادي</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+</div>
+
+<!-- ======================================================
+     TEACHER DASHBOARD
+====================================================== -->
+<div id="teacher-dash" class="screen">
+<div class="dashboard">
+  <aside class="sidebar">
+    <div class="sb-logo"><div class="logo" onclick="showScreen('landing')"><div class="logo-icon" style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#3B8FDB,#1B5FA5);"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="logo-text" style="font-size:18px;color:#1B5FA5;">SmartLearn HS</div><div class="logo-sub">بيئة تعلم إلكترونية</div></div></div></div>
+    <div class="sb-user"><div class="av av-t">م</div><div><div class="u-name">المعلم</div><div class="u-role">معلمة برمجة وذكاء اصطناعي</div></div></div>
+    <div class="nav-sec">
+      <div class="nav-sec-title">لوحة التحكم</div>
+      <div class="nav-item active" onclick="tTab('home',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>الرئيسية</div>
+      <div class="nav-item" onclick="tTab('students',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>إدارة الطلاب</div>
+      <div class="nav-item" onclick="tTab('content',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>رفع المحتوى</div>
+      <div class="nav-item" onclick="tTab('broadcast',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 010 8.49m-8.48-.01a6 6 0 010-8.49m11.31-2.82a10 10 0 010 14.14m-14.14 0a10 10 0 010-14.14"/></svg>البث المباشر<span class="n-badge nb-live"><span class="live-dot" style="width:6px;height:6px;"></span></span></div>
+      <div class="nav-item" onclick="tTab('ai-tools',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>توليد محتوى AI<span class="n-badge nb-ai">AI</span></div>
+      <div class="nav-item" onclick="tTab('schedule',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>جدول الحصص</div>
+      <div class="nav-item" onclick="tTab('messages',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>رسائل الطلاب<span class="n-badge nb-live">5</span></div>
+      <div class="nav-item" onclick="tTab('tarbawi',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>الإعلام التربوي</div>
+    </div>
+    <div class="sb-footer"><button class="logout-btn" onclick="showScreen('landing')">تسجيل الخروج</button></div>
+  </aside>
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-title" id="t-page-title">المعلم</div>
+      <div class="topbar-actions">
+        <div class="ib" style="position:relative;" onclick="toggleNotif(this)">🔔<span class="nd"></span>
+          <div class="notif-panel" id="notif-teacher">
+            <div style="font-weight:700;font-size:13px;margin-bottom:10px;">الإشعارات</div>
+            <div class="notif-item"><div class="notif-dot"></div><div>5 رسائل جديدة من الطلاب<div class="msg-time">منذ 30 دقيقة</div></div></div>
+            <div class="notif-item"><div class="notif-dot"></div><div>نتائج اختبار الوحدة 2 جاهزة<div class="msg-time">منذ ساعة</div></div></div>
+          </div>
+        </div>
+        <div class="ib">📊</div>
+      </div>
+    </div>
+
+    <!-- TEACHER HOME -->
+    <div id="tt-home" class="content">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-icon si-b">👥</div><div class="stat-val">87</div><div class="stat-label">الطلاب</div><div class="stat-trend tu">↑ 3 جدد</div></div>
+        <div class="stat-card"><div class="stat-icon si-o">📊</div><div class="stat-val">74%</div><div class="stat-label">متوسط الأداء</div></div>
+        <div class="stat-card"><div class="stat-icon si-g">📹</div><div class="stat-val">24</div><div class="stat-label">حصص مباشرة</div></div>
+        <div class="stat-card"><div class="stat-icon si-p">📝</div><div class="stat-val">156</div><div class="stat-label">اختبارات مصححة</div></div>
+      </div>
+      <div class="col2">
+        <div class="card">
+          <div class="sec-title">توزيع مستويات الطلاب</div>
+          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:16px;">
+            <div><div class="prog-row"><span>متقدم</span><span style="color:#36B847;font-weight:700;">18 (21%)</span></div><div class="prog-bar"><div class="prog-fill" style="width:21%;background:linear-gradient(90deg,#36B847,#1B8A30)"></div></div></div>
+            <div><div class="prog-row"><span>متوسط</span><span style="color:var(--pr);font-weight:700;">52 (60%)</span></div><div class="prog-bar"><div class="prog-fill" style="width:60%"></div></div></div>
+            <div><div class="prog-row"><span>يحتاج دعم</span><span style="color:#E24B4A;font-weight:700;">17 (19%)</span></div><div class="prog-bar"><div class="prog-fill" style="width:19%;background:linear-gradient(90deg,#E24B4A,#A32D2D)"></div></div></div>
+          </div>
+          <div style="padding:12px;background:var(--prl);border-radius:var(--r3);border:1px solid var(--bdr2);">
+            <p style="font-size:12px;font-weight:700;color:var(--prd);margin-bottom:4px;">🤖 اقتراح AI:</p>
+            <p style="font-size:12px;color:var(--tx2);">17 طالب يحتاجون دعماً في وحدة التعلم الآلي</p>
+            <div style="display:flex;gap:8px;margin-top:10px;">
+              <button class="zoom-btn blue" style="font-size:11px;padding:7px 14px;" onclick="window.open('https://zoom.us','_blank')">📹 Zoom</button>
+              <button class="zoom-btn purple" style="font-size:11px;padding:7px 14px;" onclick="window.open('https://teams.microsoft.com','_blank')">💼 Teams</button>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-title">أدوات سريعة</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="bcast-card" onclick="tTab('broadcast',null)" style="padding:20px;cursor:pointer;">
+              <div style="font-size:14px;font-weight:700;margin-bottom:5px;position:relative;z-index:1;">🔴 بدء بث مباشر</div>
+              <div style="font-size:12px;opacity:.85;margin-bottom:12px;position:relative;z-index:1;">Zoom أو MS Teams</div>
+              <div style="display:flex;gap:8px;position:relative;z-index:1;">
+                <button class="zoom-btn blue" style="font-size:11px;padding:7px 14px;" onclick="event.stopPropagation();window.open('https://zoom.us','_blank')">📹 Zoom</button>
+                <button class="zoom-btn purple" style="font-size:11px;padding:7px 14px;" onclick="event.stopPropagation();window.open('https://teams.microsoft.com','_blank')">💼 Teams</button>
+              </div>
+            </div>
+            <button onclick="tTab('content',null)" class="btn-out" style="font-size:13px;width:100%;padding:12px;">📤 رفع محتوى جديد</button>
+            <button onclick="tTab('ai-tools',null)" class="btn-pr" style="font-size:13px;width:100%;padding:12px;">🤖 توليد محتوى AI</button>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="sec-title">توصيات تربوية للمعلم</div>
+        <div class="col2" style="margin-bottom:0;">
+          <div style="padding:14px;background:var(--prl);border-radius:var(--r3);border-right:4px solid var(--pr);"><p style="font-size:13px;font-weight:700;color:var(--prd);margin-bottom:5px;">💡 التعلم التفاضلي</p><p style="font-size:12px;color:var(--tx2);">قدّمي 3 مسارات مختلفة: مبسط، معياري، وموسع لتناسب مستويات الطلاب المختلفة.</p></div>
+          <div style="padding:14px;background:#E6F4FF;border-radius:var(--r3);border-right:4px solid #3B8FDB;"><p style="font-size:13px;font-weight:700;color:#1B5FA5;margin-bottom:5px;">🎯 تعلم الأقران</p><p style="font-size:12px;color:var(--tx2);">قرّني الطلاب المتقدمين مع الذين يحتاجون دعماً — ثبتت فاعلية هذه الطريقة علمياً.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER STUDENTS -->
+    <div id="tt-students" class="content hidden">
+      <div class="sec-title">إدارة الطلاب وأداؤهم</div>
+      <div class="card">
+        <table class="dt">
+          <thead><tr><th>الطالب</th><th>المستوى</th><th>التقدم</th><th>آخر اختبار</th><th>الحالة</th><th>إجراء</th></tr></thead>
+          <tbody>
+            <tr><td><strong>أحمد محمد</strong></td><td><span class="badge b-info">متوسط</span></td><td><div class="prog-bar" style="width:100px"><div class="prog-fill" style="width:75%"></div></div></td><td>88%</td><td><span class="badge b-suc">نشط</span></td><td><button class="l-btn" onclick="openModal('student-report-modal')">تقرير مفصل</button></td></tr>
+            <tr><td><strong>فاطمة علي</strong></td><td><span class="badge b-suc">متقدم</span></td><td><div class="prog-bar" style="width:100px"><div class="prog-fill" style="width:92%;background:linear-gradient(90deg,#36B847,#1B8A30)"></div></div></td><td>96%</td><td><span class="badge b-suc">نشط</span></td><td><button class="l-btn">تقرير</button></td></tr>
+            <tr><td><strong>محمد أحمد</strong></td><td><span class="badge b-warn">يحتاج دعم</span></td><td><div class="prog-bar" style="width:100px"><div class="prog-fill" style="width:35%;background:linear-gradient(90deg,#E24B4A,#A32D2D)"></div></div></td><td>48%</td><td><span class="badge b-warn">بطيء</span></td><td><button class="l-btn" style="background:var(--pr);color:#fff;border-color:var(--pr);" onclick="openModal('zoom-modal')">Zoom/Teams</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TEACHER CONTENT -->
+    <div id="tt-content" class="content hidden">
+      <div class="sec-title">رفع المحتوى التعليمي</div>
+      <div style="margin-bottom:14px;padding:14px;background:linear-gradient(135deg,#F5F0FF,#EDE5FF);border-radius:var(--r3);font-size:13px;color:#3F2F82;border:1px solid #D9D0F3;">
+        المحتوى الذي ترفعه سيعرض أولاً على الإدارة للموافقة قبل أن يصبح متاحاً للطلاب.
+      </div>
+      <div class="col3">
+        <div class="card" style="text-align:center;">
+          <div style="font-size:36px;margin-bottom:10px;">📹</div>
+          <div style="font-weight:700;margin-bottom:6px;">رفع فيديو</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">MP4, AVI, MOV</div>
+          <div class="upload-area">
+            <div style="font-size:13px;font-weight:600;margin-bottom:2px;">اختر ملف الفيديو</div>
+            <div style="font-size:11px;color:var(--tx3);">أو اسحبه هنا</div>
+            <input type="file" accept="video/*" onchange="previewUpload(this,'video')">
+          </div>
+          <div id="preview-video" style="font-size:12px;color:var(--prd);margin-top:8px;"></div>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="font-size:36px;margin-bottom:10px;">📄</div>
+          <div style="font-weight:700;margin-bottom:6px;">رفع PDF</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">ملاحظات وورقات عمل</div>
+          <div class="upload-area">
+            <div style="font-size:13px;font-weight:600;margin-bottom:2px;">اختر ملف PDF</div>
+            <div style="font-size:11px;color:var(--tx3);">أو اسحبه هنا</div>
+            <input type="file" accept=".pdf" onchange="previewUpload(this,'pdf')">
+          </div>
+          <div id="preview-pdf" style="font-size:12px;color:var(--prd);margin-top:8px;"></div>
+        </div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openModal('quiz-create-modal')">
+          <div style="font-size:36px;margin-bottom:10px;">❓</div>
+          <div style="font-weight:700;margin-bottom:6px;">إنشاء اختبار</div>
+          <div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">بمساعدة AI</div>
+          <button class="btn-pr" style="font-size:12px;padding:9px 18px;">إنشاء</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER BROADCAST -->
+    <div id="tt-broadcast" class="content hidden">
+      <div class="sec-title">البث المباشر</div>
+      <div class="col2">
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="background:linear-gradient(135deg,#2D8CFF,#1a5fa5);border-radius:var(--r);padding:24px;color:#fff;">
+            <div style="font-size:18px;font-weight:700;margin-bottom:8px;">📹 بث عبر Zoom</div>
+            <div style="font-size:13px;opacity:.85;margin-bottom:16px;">ابدأي حصتك المباشرة عبر Zoom</div>
+            <button class="zoom-btn blue" style="font-size:13px;" onclick="window.open('https://zoom.us/start/videomeeting','_blank')">بدء اجتماع Zoom جديد</button>
+          </div>
+          <div style="background:linear-gradient(135deg,#6264A7,#4a4c7e);border-radius:var(--r);padding:24px;color:#fff;">
+            <div style="font-size:18px;font-weight:700;margin-bottom:8px;">💼 بث عبر MS Teams</div>
+            <div style="font-size:13px;opacity:.85;margin-bottom:16px;">ابدأي اجتماع Teams مع طلابك</div>
+            <button class="zoom-btn purple" style="font-size:13px;" onclick="window.open('https://teams.microsoft.com','_blank')">فتح Microsoft Teams</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-title">جدول البث القادم</div>
+          <div class="lesson-item"><div class="l-num" style="background:#E6F4FF;color:#1B5FA5;">اليوم</div><div class="l-info"><div class="l-name">التعلم الآلي — الوحدة 2</div><div class="l-meta">3:00م · 45 دقيقة · 87 طالب</div></div><button class="zoom-btn blue" style="font-size:11px;padding:6px 12px;" onclick="window.open('https://zoom.us','_blank')">Zoom</button></div>
+          <div class="lesson-item"><div class="l-num">غد</div><div class="l-info"><div class="l-name">Python للمبتدئين</div><div class="l-meta">11:00ص · 60 دقيقة</div></div><button class="zoom-btn purple" style="font-size:11px;padding:6px 12px;" onclick="window.open('https://teams.microsoft.com','_blank')">Teams</button></div>
+          <div style="margin-top:16px;padding:12px;background:var(--bg);border-radius:var(--r3);">
+            <div style="font-size:12px;font-weight:700;margin-bottom:8px;">جدولة حصة جديدة</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <input class="f-inp" type="datetime-local" style="flex:1;">
+              <select class="f-sel" style="width:auto;"><option>Zoom</option><option>Teams</option></select>
+              <button class="btn-pr" style="font-size:12px;padding:8px 16px;" onclick="alert('تم جدولة الحصة بنجاح! ✓')">جدولة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER AI TOOLS -->
+    <div id="tt-ai-tools" class="content hidden">
+      <div class="sec-title">توليد محتوى بالذكاء الاصطناعي</div>
+      <p style="font-size:12px;color:var(--tx3);margin-bottom:14px;">اختر نوع المحتوى — سيُولَّد فعلياً بالذكاء الاصطناعي حسب المادة والمستوى.</p>
+      <div class="col3">
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('quiz')"><div style="font-size:32px;margin-bottom:10px;">📝</div><div style="font-weight:700;margin-bottom:5px;">توليد اختبار</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">10 أسئلة MCQ مع الإجابات</div><button class="btn-pr" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('quiz')">توليد</button></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('summary')"><div style="font-size:32px;margin-bottom:10px;">📋</div><div style="font-weight:700;margin-bottom:5px;">تلخيص الدرس</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">ملخص منظم بنقاط واضحة</div><button class="btn-out" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('summary')">لخّص</button></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('explain')"><div style="font-size:32px;margin-bottom:10px;">🎓</div><div style="font-weight:700;margin-bottom:5px;">شرح مفصل</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">شرح خطوة بخطوة بأمثلة</div><button class="btn-pr" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('explain')">شرح</button></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('mindmap')"><div style="font-size:32px;margin-bottom:10px;">🗺️</div><div style="font-weight:700;margin-bottom:5px;">خريطة ذهنية</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">خريطة مفاهيم نصية متفرعة</div><button class="btn-out" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('mindmap')">إنشاء</button></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('podcast')"><div style="font-size:32px;margin-bottom:10px;">🎙️</div><div style="font-weight:700;margin-bottom:5px;">سيناريو بودكاست</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">نص قابل للتسجيل صوتياً</div><button class="btn-pr" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('podcast')">إنشاء</button></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('ppt')"><div style="font-size:32px;margin-bottom:10px;">📊</div><div style="font-weight:700;margin-bottom:5px;">شرائح عرض</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">8-12 شريحة مع نقاط</div><button class="btn-out" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('ppt')">إنشاء</button></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('exercises')"><div style="font-size:32px;margin-bottom:10px;">✍️</div><div style="font-weight:700;margin-bottom:5px;">تمارين متدرجة</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">8 تمارين من السهل للصعب</div><button class="btn-pr" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('exercises')">توليد</button></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="openAIGen('review')"><div style="font-size:32px;margin-bottom:10px;">🔁</div><div style="font-weight:700;margin-bottom:5px;">مراجعة قبل الامتحان</div><div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">أهم النقاط + أسئلة محتملة</div><button class="btn-out" style="font-size:12px;width:100%;padding:10px;" onclick="event.stopPropagation();openAIGen('review')">مراجعة</button></div>
+      </div>
+    </div>
+
+    <!-- TEACHER SCHEDULE -->
+    <div id="tt-schedule" class="content hidden">
+      <div class="sec-title">جدول الحصص</div>
+      <div class="card" style="overflow-x:auto;">
+        <table class="schedule" style="min-width:700px;">
+          <thead><tr><th>الوقت</th><th>السبت</th><th>الأحد</th><th>الاثنين</th><th>الثلاثاء</th><th>الأربعاء</th><th>الخميس</th></tr></thead>
+          <tbody>
+            <tr><td style="font-weight:700;font-size:12px;">8:00</td><td><div class="sched-lesson blue">💻 برمجة AI — أول أ</div></td><td></td><td><div class="sched-lesson blue">💻 برمجة AI — أول ب</div></td><td></td><td><div class="sched-lesson blue">💻 برمجة AI — أول أ</div></td><td></td></tr>
+            <tr><td style="font-weight:700;font-size:12px;">10:00</td><td></td><td><div class="sched-lesson blue">💻 برمجة AI — أول ج</div></td><td></td><td><div class="sched-lesson blue">💻 برمجة AI — أول ب</div></td><td></td><td><div class="sched-lesson blue">💻 برمجة AI — أول ج</div></td></tr>
+            <tr><td style="font-weight:700;font-size:12px;">3:00م</td><td></td><td><div class="sched-lesson" style="background:#FEECEC;color:#c00;">🔴 Zoom — كل الفصول</div></td><td></td><td></td><td></td><td></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TEACHER MESSAGES -->
+    <div id="tt-messages" class="content hidden">
+      <div class="sec-title">رسائل الطلاب</div>
+      <div class="col2">
+        <div class="card">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;">الرسائل الواردة <span class="badge b-org">5 جديدة</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px;max-height:400px;overflow-y:auto;">
+            <div class="msg-item"><div class="msg-sender">أحمد محمد</div><div class="msg-text">لم أفهم درس خوارزميات البحث، هل يمكن شرح إضافي؟</div><div class="msg-time">منذ ساعة</div></div>
+            <div class="msg-item"><div class="msg-sender">فاطمة علي</div><div class="msg-text">شكراً لك على الشرح الرائع! متى موعد الاختبار القادم؟</div><div class="msg-time">منذ 2 ساعة</div></div>
+            <div class="msg-item"><div class="msg-sender">محمد أحمد</div><div class="msg-text">أحتاج مساعدة في مادة Python من فضلك</div><div class="msg-time">أمس</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;">رد على رسالة</div>
+          <div class="f-group"><label class="f-label">إلى</label><select class="f-sel"><option>أحمد محمد</option><option>فاطمة علي</option><option>محمد أحمد</option></select></div>
+          <div class="f-group"><label class="f-label">الرسالة</label><textarea class="f-inp" rows="5" placeholder="اكتب ردك هنا..."></textarea></div>
+          <button class="btn-pr" style="width:100%;padding:12px;" onclick="alert('تم إرسال الرد بنجاح! ✓')">إرسال الرد</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- TEACHER TARBAWI -->
+    <div id="tt-tarbawi" class="content hidden">
+      <div class="sec-title">الإعلام التربوي في الدرس</div>
+      <div class="col2">
+        <div class="card">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;">فيديوهات تربوية للدمج في الدروس</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div class="skill-card" onclick="window.open('https://www.youtube.com/results?search_query=قيم+العمل+والإبداع+للشباب','_blank')" style="display:flex;align-items:center;gap:12px;padding:12px;cursor:pointer;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#36B847,#1B8A30);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">▶</div>
+              <div><div style="font-size:13px;font-weight:600;">قيمة الإبداع في التكنولوجيا</div><div style="font-size:11px;color:var(--tx3);">مناسب لدرس البرمجة</div></div>
+            </div>
+            <div class="skill-card" onclick="window.open('https://www.youtube.com/results?search_query=الأمانة+والمسؤولية+في+العصر+الرقمي','_blank')" style="display:flex;align-items:center;gap:12px;padding:12px;cursor:pointer;">
+              <div style="width:44px;height:44px;background:linear-gradient(135deg,#1B5FA5,#3B8FDB);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">▶</div>
+              <div><div style="font-size:13px;font-weight:600;">الأمانة الرقمية والأخلاق</div><div style="font-size:11px;color:var(--tx3);">مناسب لدرس الذكاء الاصطناعي</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;">نصائح تربوية للمعلم</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="padding:12px;background:var(--prl);border-radius:var(--r3);border-right:3px solid var(--pr);"><p style="font-size:12px;font-weight:700;color:var(--prd);">🌟 ابدأ كل درس بسؤال تأملي</p><p style="font-size:12px;color:var(--tx2);">"كيف يمكننا استخدام الذكاء الاصطناعي لصالح مجتمعنا؟"</p></div>
+            <div style="padding:12px;background:#E6F4FF;border-radius:var(--r3);border-right:3px solid #3B8FDB;"><p style="font-size:12px;font-weight:700;color:#1B5FA5;">💡 اختم بتحدٍّ إبداعي</p><p style="font-size:12px;color:var(--tx2);">اطلب من الطلاب اقتراح تطبيق AI لحل مشكلة في مجتمعهم</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+</div>
+
+<!-- ======================================================
+     PARENT DASHBOARD
+====================================================== -->
+<div id="parent-dash" class="screen">
+<div class="dashboard">
+  <aside class="sidebar">
+    <div class="sb-logo"><div class="logo" onclick="showScreen('landing')"><div class="logo-icon" style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#36B847,#1B8A30);"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="logo-text" style="font-size:18px;color:#1B8A30;">SmartLearn HS</div><div class="logo-sub">بيئة تعلم إلكترونية</div></div></div></div>
+    <div class="sb-user"><div class="av av-p">و</div><div><div class="u-name">ولي الأمر</div><div class="u-role">متابعة الأبناء</div></div></div>
+    <div class="nav-sec">
+      <div class="nav-item active" onclick="pTab('home',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>الرئيسية</div>
+      <div class="nav-item" onclick="pTab('children',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>متابعة الأبناء</div>
+      <div class="nav-item" onclick="pTab('tarbawi',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>نصائح تربوية</div>
+      <div class="nav-item" onclick="pTab('messages',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>التواصل مع المعلمين</div>
+      <div class="nav-item" onclick="pTab('schedule',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>مواعيد البث</div>
+    </div>
+    <div class="sb-footer"><button class="logout-btn" onclick="showScreen('landing')">تسجيل الخروج</button></div>
+  </aside>
+  <main class="main-content">
+    <div class="topbar">
+      <div class="topbar-title" id="p-page-title">ولي الأمر</div>
+      <div class="topbar-actions"><div class="ib" style="position:relative;" onclick="toggleNotif(this)">🔔<span class="nd"></span><div class="notif-panel"><div style="font-weight:700;font-size:13px;margin-bottom:10px;">الإشعارات</div><div class="notif-item"><div class="notif-dot"></div><div>أحمد أكمل الوحدة الأولى بنجاح 🎉<div class="msg-time">منذ ساعة</div></div></div></div></div></div>
+    </div>
+
+    <!-- PARENT HOME -->
+    <div id="pt-home" class="content">
+      <div id="parent-home-children" class="child-tab"></div>
+      <button class="btn-out" style="font-size:13px;margin:14px 0 20px;padding:10px 16px;" onclick="openAddChildModal()">➕ ربط ابن جديد بكود الطالب</button>
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-icon si-g">🎓</div><div class="stat-val" id="child-avg">88%</div><div class="stat-label">معدل <span id="child-name-stat">أحمد</span></div></div>
+        <div class="stat-card"><div class="stat-icon si-o">📅</div><div class="stat-val">95%</div><div class="stat-label">الانتظام</div><div class="stat-trend tu">↑ منتظم</div></div>
+        <div class="stat-card"><div class="stat-icon si-b">⏱️</div><div class="stat-val">4.5 س</div><div class="stat-label">وقت الدراسة اليومي</div></div>
+        <div class="stat-card"><div class="stat-icon si-p">🏆</div><div class="stat-val">2,450</div><div class="stat-label">نقاط التحفيز</div></div>
+      </div>
+      <div style="margin:18px 0 0;font-size:14px;color:var(--tx3);">كود الطالب: <strong id="child-code">P001</strong></div>
+      <div class="col2">
+        <div class="card">
+          <div class="sec-title">تقرير أداء <span id="child-report-name">أحمد</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div><div class="prog-row"><span>البرمجة والذكاء الاصطناعي</span><span style="color:var(--pr);font-weight:700;">88%</span></div><div class="prog-bar"><div class="prog-fill" style="width:88%"></div></div></div>
+            <div><div class="prog-row"><span>الرياضيات</span><span style="color:var(--pr);font-weight:700;">72%</span></div><div class="prog-bar"><div class="prog-fill" style="width:72%"></div></div></div>
+            <div><div class="prog-row"><span>الكيمياء</span><span style="color:#E24B4A;font-weight:700;">58%</span></div><div class="prog-bar"><div class="prog-fill" style="width:58%;background:linear-gradient(90deg,#E24B4A,#A32D2D)"></div></div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-title">توصيات AI لك</div>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="padding:12px;background:var(--prl);border-radius:var(--r3);border-right:3px solid var(--pr);"><p style="font-size:12px;font-weight:700;color:var(--prd);">💡 تحسين الكيمياء</p><p style="font-size:12px;color:var(--tx2);">يحتاج متابعة — يُنصح بجلسة مراجعة أسبوعية</p></div>
+            <div style="padding:12px;background:#E6FFE8;border-radius:var(--r3);border-right:3px solid #36B847;"><p style="font-size:12px;font-weight:700;color:#1B8A30;">🌟 برنامج تربوي</p><p style="font-size:12px;color:var(--tx2);">30 دقيقة قراءة يومية تعزز التركيز والفهم</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARENT CHILDREN -->
+    <div id="pt-children" class="content hidden">
+      <div class="sec-title">متابعة الأبناء</div>
+      <div id="parent-children-list" class="child-tab"></div>
+      <button class="btn-out" style="font-size:13px;margin:14px 0 12px;padding:10px 16px;" onclick="openAddChildModal()">➕ ربط ابن جديد بكود الطالب</button>
+      <div class="card">
+        <div id="child-detail-summary" style="font-size:14px;color:var(--tx3);margin-bottom:14px;">المرحلة: <strong>الصف الأول الثانوي</strong> · المستوى: <strong>المستوى المتقدم</strong> · الكود: <strong>P001</strong></div>
+        <div class="sec-title" style="margin-bottom:12px;font-size:15px;">مواد الطالب</div>
+        <table class="dt">
+          <thead><tr><th>المادة</th><th>المعدل</th><th>الدروس المكتملة</th><th>آخر اختبار</th><th>التوصية</th></tr></thead>
+          <tbody id="child-subjects-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- PARENT TARBAWI -->
+    <div id="pt-tarbawi" class="content hidden">
+      <div class="sec-title">نصائح تربوية يومية</div>
+      <div class="col3">
+        <div class="tarbawi-card" onclick="window.open('https://www.youtube.com/results?search_query=تربية+الأبناء+المراهقين','_blank')"><div style="font-size:32px;margin-bottom:10px;">💚</div><div style="font-weight:700;font-size:14px;margin-bottom:5px;">التواصل مع أبنائك</div><div style="font-size:11px;opacity:.8;">فيديوهات تربوية متخصصة</div></div>
+        <div class="tarbawi-card" style="background:linear-gradient(135deg,#1a0d3b,#2d1b69);" onclick="window.open('https://www.youtube.com/results?search_query=كيف+تحفز+ابنك+على+الدراسة','_blank')"><div style="font-size:32px;margin-bottom:10px;">⭐</div><div style="font-weight:700;font-size:14px;margin-bottom:5px;">تحفيز الأبناء</div><div style="font-size:11px;opacity:.8;">أساليب التشجيع الإيجابي</div></div>
+        <div class="tarbawi-card" style="background:linear-gradient(135deg,#1a1a0d,#3b3b1a);" onclick="window.open('https://www.youtube.com/results?search_query=الانضباط+الرقمي+للأطفال','_blank')"><div style="font-size:32px;margin-bottom:10px;">📵</div><div style="font-weight:700;font-size:14px;margin-bottom:5px;">الانضباط الرقمي</div><div style="font-size:11px;opacity:.8;">توازن استخدام التكنولوجيا</div></div>
+      </div>
+      <div class="card">
+        <div class="sec-title">نصيحة اليوم</div>
+        <div style="padding:20px;background:var(--prl);border-radius:var(--r2);border:1px solid var(--bdr2);text-align:center;">
+          <div style="font-size:36px;margin-bottom:12px;">💡</div>
+          <p style="font-size:15px;font-weight:700;color:var(--prd);margin-bottom:8px;">خصصي وقتاً للجلوس مع ابنك يومياً</p>
+          <p style="font-size:13px;color:var(--tx2);line-height:1.7;">10 دقائق حوار صادق يومياً تبني جسراً من الثقة أقوى من ساعات المراقبة. اسأليه: ما أجمل شيء تعلمته اليوم؟</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARENT MESSAGES -->
+    <div id="pt-messages" class="content hidden">
+      <div class="sec-title">التواصل مع المعلمين</div>
+      <div class="col2">
+        <div class="card">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;">رسائل واردة</div>
+          <div class="msg-item" style="margin-bottom:10px;"><div class="msg-sender">م. سارة — برمجة AI</div><div class="msg-text">أداء أحمد رائع! استمر في التشجيع 💪</div><div class="msg-time">منذ يوم</div></div>
+          <div class="msg-item"><div class="msg-sender">م. محمود — رياضيات</div><div class="msg-text">يحتاج أحمد مراجعة في المعادلات التفاضلية</div><div class="msg-time">منذ يومين</div></div>
+        </div>
+        <div class="card">
+          <div style="font-size:13px;font-weight:700;margin-bottom:12px;">إرسال رسالة</div>
+          <div class="f-group"><label class="f-label">اختر المعلم</label><select class="f-sel"><option>م. سارة — برمجة AI</option><option>م. محمود — رياضيات</option></select></div>
+          <div class="f-group"><label class="f-label">عن الابن</label><select class="f-sel"><option>أحمد محمد</option><option>سارة محمد</option><option>يوسف محمد</option></select></div>
+          <div class="f-group"><label class="f-label">الرسالة</label><textarea class="f-inp" rows="4" placeholder="اكتب رسالتك..."></textarea></div>
+          <button class="btn-pr" style="width:100%;padding:12px;" onclick="alert('تم إرسال الرسالة! ✓')">إرسال</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- PARENT SCHEDULE -->
+    <div id="pt-schedule" class="content hidden">
+      <div class="sec-title">مواعيد البث المباشر لأبنائك</div>
+      <div class="card">
+        <table class="dt">
+          <thead><tr><th>الابن</th><th>المادة</th><th>الموضوع</th><th>الوقت</th><th>المنصة</th><th>الانضمام</th></tr></thead>
+          <tbody>
+            <tr><td>أحمد</td><td>برمجة AI</td><td>التعلم الآلي</td><td>اليوم 3:00م</td><td><span class="badge b-info">Zoom</span></td><td><button class="zoom-btn blue" style="font-size:11px;padding:6px 12px;" onclick="window.open('https://zoom.us','_blank')">انضم</button></td></tr>
+            <tr><td>سارة</td><td>رياضيات</td><td>المصفوفات</td><td>غد 11:00ص</td><td><span class="badge" style="background:#EDE7F6;color:#4527A0;">Teams</span></td><td><button class="zoom-btn purple" style="font-size:11px;padding:6px 12px;" onclick="window.open('https://teams.microsoft.com','_blank')">انضم</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+</div>
+
+<!-- ======================================================
+     ADMIN DASHBOARD
+====================================================== -->
+<div id="admin-dash" class="screen">
+<div class="dashboard">
+  <aside class="sidebar">
+    <div class="sb-logo"><div class="logo" onclick="showScreen('landing')"><div class="logo-icon" style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#9B5AE5,#7B3ADB);"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:white;"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="logo-text" style="font-size:18px;color:#7B3ADB;">SmartLearn HS</div><div class="logo-sub">بيئة تعلم إلكترونية</div></div></div></div>
+    <div class="sb-user"><div class="av av-a">إ</div><div><div class="u-name">مدير المنصة</div><div class="u-role">الإدارة</div></div></div>
+    <div class="nav-sec">
+      <div class="nav-item active" onclick="aTab('home',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>الرئيسية</div>
+      <div class="nav-item" onclick="aTab('teachers',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>قبول المعلمين</div>
+      <div class="nav-item" onclick="aTab('reports',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>تقارير المنصة</div>
+      <div class="nav-item" onclick="aTab('security',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>الأمن والصلاحيات</div>
+      <div class="nav-item" onclick="aTab('schedule',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="3" x2="9" y2="21"/></svg>جدول الحصص</div>
+      <div class="nav-item" onclick="aTab('broadcast',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>إدارة البث<span class="n-badge nb-live"><span class="live-dot" style="width:6px;height:6px;"></span></span></div>
+    </div>
+    <div class="sb-footer"><button class="logout-btn" onclick="showScreen('landing')">تسجيل الخروج</button></div>
+  </aside>
+  <main class="main-content">
+    <div class="topbar"><div class="topbar-title" id="a-page-title">الإدارة</div><div class="topbar-actions"><div class="ib" style="position:relative;">🔔<span class="nd"></span></div></div></div>
+
+    <!-- ADMIN HOME -->
+    <div id="at-home" class="content">
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-icon si-p">👥</div><div class="stat-val">12,480</div><div class="stat-label">إجمالي المستخدمين</div></div>
+        <div class="stat-card"><div class="stat-icon si-o">👩‍🏫</div><div class="stat-val">246</div><div class="stat-label">المعلمون</div></div>
+        <div class="stat-card"><div class="stat-icon si-g">📈</div><div class="stat-val">89%</div><div class="stat-label">معدل التفاعل</div></div>
+        <div class="stat-card"><div class="stat-icon si-b">📡</div><div class="stat-val">24/7</div><div class="stat-label">وقت التشغيل</div></div>
+      </div>
+      <div class="col2">
+        <div class="card">
+          <div class="sec-title">تقرير المنصة الذكي</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;padding:9px;background:var(--bg);border-radius:var(--r3);font-size:13px;"><span>الجلسات اليوم</span><strong>8,492</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:9px;background:var(--bg);border-radius:var(--r3);font-size:13px;"><span>محتوى مرفوع</span><strong>34 درس</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:9px;background:var(--bg);border-radius:var(--r3);font-size:13px;"><span>مشاهدات قناة مدرستنا</span><strong>45,200</strong></div>
+            <div style="display:flex;justify-content:space-between;padding:9px;background:var(--prl);border-radius:var(--r3);font-size:13px;color:var(--prd);font-weight:700;"><span>التأثير التربوي</span><strong>عالي جداً ✦</strong></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="sec-title">محتوى بانتظار الموافقة</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="padding:10px;background:var(--bg);border-radius:var(--r3);display:flex;align-items:center;gap:10px;"><div style="flex:1;"><div style="font-size:13px;font-weight:600;">درس فيديو: شرح مبادئ البرمجة</div><div style="font-size:11px;color:var(--tx3);">أ. أحمد شريف · فيديو MP4</div></div><div style="display:flex;gap:6px;"><button class="l-btn" style="background:#36B847;color:#fff;border-color:#36B847;font-size:11px;" onclick="approveContent(this)">موافقة</button><button class="l-btn" style="background:#E24B4A;color:#fff;border-color:#E24B4A;font-size:11px;" onclick="rejectContent(this)">رفض</button></div></div>
+            <div style="padding:10px;background:var(--bg);border-radius:var(--r3);display:flex;align-items:center;gap:10px;"><div style="flex:1;"><div style="font-size:13px;font-weight:600;">مذكرة: قوانين الحوسبة</div><div style="font-size:11px;color:var(--tx3);">أ. سارة يوسف · PDF</div></div><div style="display:flex;gap:6px;"><button class="l-btn" style="background:#36B847;color:#fff;border-color:#36B847;font-size:11px;" onclick="approveContent(this)">موافقة</button><button class="l-btn" style="background:#E24B4A;color:#fff;border-color:#E24B4A;font-size:11px;" onclick="rejectContent(this)">رفض</button></div></div>
+            <div style="padding:10px;background:var(--bg);border-radius:var(--r3);display:flex;align-items:center;gap:10px;"><div style="flex:1;"><div style="font-size:13px;font-weight:600;">اختبار وحدة الذكاء الاصطناعي</div><div style="font-size:11px;color:var(--tx3);">أ. محمد حسني · ملف سؤال</div></div><div style="display:flex;gap:6px;"><button class="l-btn" style="background:#36B847;color:#fff;border-color:#36B847;font-size:11px;" onclick="approveContent(this)">موافقة</button><button class="l-btn" style="background:#E24B4A;color:#fff;border-color:#E24B4A;font-size:11px;" onclick="rejectContent(this)">رفض</button></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN TEACHERS -->
+    <div id="at-teachers" class="content hidden">
+      <div class="sec-title">قبول المعلمين</div>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;"><span style="font-size:13px;font-weight:600;">طلبات الانضمام</span><span class="badge b-warn">7 طلبات</span></div>
+        <table class="dt">
+          <thead><tr><th>الاسم</th><th>المادة</th><th>المؤهل</th><th>سنوات الخبرة</th><th>الحالة</th><th>الإجراء</th></tr></thead>
+          <tbody>
+            <tr><td><strong>أ. محمود عبد الله</strong></td><td>رياضيات</td><td><span class="badge b-suc">دكتوراه</span></td><td>15 سنة</td><td><span class="badge b-warn">قيد المراجعة</span></td><td><div style="display:flex;gap:6px;"><button class="l-btn" style="background:#36B847;color:#fff;border-color:#36B847;" onclick="alert('تم قبول المعلم ✓')">قبول</button><button class="l-btn" style="color:#c00;border-color:#fcc;">رفض</button></div></td></tr>
+            <tr><td><strong>أ. نهى السيد</strong></td><td>كيمياء</td><td><span class="badge b-info">ماجستير</span></td><td>8 سنوات</td><td><span class="badge b-warn">قيد المراجعة</span></td><td><div style="display:flex;gap:6px;"><button class="l-btn" style="background:#36B847;color:#fff;border-color:#36B847;" onclick="alert('تم قبول المعلمة ✓')">قبول</button><button class="l-btn" style="color:#c00;border-color:#fcc;">رفض</button></div></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ADMIN REPORTS -->
+    <div id="at-reports" class="content hidden">
+      <div class="sec-title">تقارير المنصة الشاملة</div>
+      <div class="col2">
+        <div class="card">
+          <div class="sec-title">الصفوف</div>
+          <table class="dt">
+            <thead><tr><th>الصف</th><th>نسبة الإكمال</th><th>المستوى العام</th><th>التركيز المطلوب</th></tr></thead>
+            <tbody>
+              <tr><td>الصف الأول الثانوي</td><td>82%</td><td>متوسط</td><td>البرمجة والرياضيات</td></tr>
+              <tr><td>الصف الثاني الثانوي</td><td>78%</td><td>متوسط</td><td>الكيمياء والفيزياء</td></tr>
+              <tr><td>الصف الثالث الثانوي</td><td>85%</td><td>جيد</td><td>رياضيات وتطبيقات</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card">
+          <div class="sec-title">تقييم المعلمين</div>
+          <table class="dt">
+            <thead><tr><th>المعلم</th><th>المادة</th><th>التقييم</th><th>الملاحظات</th></tr></thead>
+            <tbody>
+              <tr><td>م. سارة أحمد</td><td>برمجة AI</td><td>4.8/5</td><td>شرح واضح وسريع</td></tr>
+              <tr><td>م. محمود عبد الله</td><td>رياضيات</td><td>4.3/5</td><td>ينصح بدعم إضافي في التفاضل</td></tr>
+              <tr><td>م. نهى السيد</td><td>كيمياء</td><td>4.5/5</td><td>حسنت الأداء في المعمل</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col2" style="margin-top:18px; gap:20px; display:flex; flex-wrap:wrap;">
+        <div class="card" style="flex:1; min-width:280px;">
+          <div class="sec-title">المواد الأكثر قصوراً</div>
+          <ul style="padding-left:16px;color:var(--tx2);font-size:13px;">
+            <li>الكيمياء</li>
+            <li>الفيزياء</li>
+            <li>الرياضيات التطبيقية</li>
+          </ul>
+        </div>
+        <div class="card" style="flex:1; min-width:280px;">
+          <div class="sec-title">أكثر الأسئلة انتشاراً</div>
+          <ul style="padding-left:16px;color:var(--tx2);font-size:13px;">
+            <li>ما الفرق بين الذكاء الاصطناعي والتعلم الآلي؟</li>
+            <li>كيف نطبق قانون نيوتن الثاني؟</li>
+            <li>ما هي خطوات حل معادلة من الدرجة الثانية؟</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN SECURITY -->
+    <div id="at-security" class="content hidden">
+      <div class="sec-title">الأمن وإدارة الصلاحيات</div>
+      <div class="card"><p style="font-size:13px;color:var(--tx2);margin-bottom:16px;">إدارة صلاحيات المستخدمين وأمن البيانات</p>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div style="padding:12px;background:var(--bg);border-radius:var(--r3);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;">حماية البيانات الشخصية</span><span class="badge b-suc">مفعّل</span></div>
+          <div style="padding:12px;background:var(--bg);border-radius:var(--r3);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;">التحقق الثنائي</span><span class="badge b-suc">مفعّل</span></div>
+          <div style="padding:12px;background:var(--bg);border-radius:var(--r3);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;">تشفير البيانات</span><span class="badge b-suc">SSL/TLS</span></div>
+          <div style="padding:12px;background:var(--bg);border-radius:var(--r3);display:flex;justify-content:space-between;align-items:center;"><span style="font-size:13px;">نسخ احتياطي يومي</span><span class="badge b-info">كل 24 ساعة</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN BROADCAST -->
+    <div id="at-broadcast" class="content hidden">
+      <div class="sec-title">إدارة البث المباشر</div>
+      <div class="card">
+        <div style="margin-bottom:14px;"><span class="live-dot"></span> <strong style="font-size:13px;">البث الحالي:</strong> <span style="font-size:13px;color:var(--tx2);">رياضيات — الأول الثانوي · 1,032 مشاهد</span></div>
+        <table class="dt">
+          <thead><tr><th>المادة</th><th>المعلم</th><th>المشاهدون</th><th>المنصة</th><th>الحالة</th><th>إجراء</th></tr></thead>
+          <tbody>
+            <tr><td>رياضيات</td><td>م. محمود عبد الله</td><td>1,032</td><td><span class="badge b-info">Zoom</span></td><td><span class="badge" style="background:#E6FFE8;color:#1B8A30;"><span class="live-dot" style="width:6px;height:6px;margin-left:5px;"></span> مباشر</span></td><td><button class="l-btn" onclick="endBroadcast(this)">إنهاء</button></td></tr>
+            <tr><td>كيمياء</td><td>م. نهى السيد</td><td>842</td><td><span class="badge" style="background:linear-gradient(135deg,#9B5AE5,#7B3ADB);color:#fff;">Teams</span></td><td><span class="badge b-warn">قادم</span></td><td><button class="l-btn" onclick="editBroadcast(this)">تعديل</button></td></tr>
+            <tr><td>علوم</td><td>م. سارة يوسف</td><td>670</td><td><span class="badge b-info">Zoom</span></td><td><span class="badge b-info">مجدول</span></td><td><button class="l-btn" onclick="editBroadcast(this)">تعديل</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="at-schedule" class="content hidden">
+      <div class="sec-title">جدول الحصص الإداري</div>
+      <div class="card">
+        <table class="dt">
+          <thead><tr><th>الصف</th><th>المادة</th><th>المعلم</th><th>الوقت</th><th>اليوم</th><th>إجراء</th></tr></thead>
+          <tbody>
+            <tr><td>الصف الأول الثانوي</td><td>برمجة AI</td><td>م. سارة أحمد</td><td>8:00</td><td>السبت</td><td><button class="l-btn" onclick="editAdminSchedule(this)">تعديل</button></td></tr>
+            <tr><td>الصف الثاني الثانوي</td><td>كيمياء</td><td>م. نهى السيد</td><td>10:00</td><td>الأحد</td><td><button class="l-btn" onclick="editAdminSchedule(this)">تعديل</button></td></tr>
+            <tr><td>الصف الثالث الثانوي</td><td>رياضيات</td><td>م. محمود عبد الله</td><td>12:00</td><td>الاثنين</td><td><button class="l-btn" onclick="editAdminSchedule(this)">تعديل</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+</div>
+
+<!-- ======================================================
+     MODALS
+====================================================== -->
+
+<!-- LEVEL MODAL -->
+<div class="modal-overlay" id="level-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('level-modal')">✕</button>
+    <h3 class="modal-title">مستواك الدراسي</h3>
+    <p class="modal-sub">تم تحديده بناءً على الاختبار القبلي</p>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:20px;">
+      <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--pr),var(--prd));display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:900;color:#fff;">3</div>
+      <div><div style="font-size:18px;font-weight:700;">متوسط — المستوى 3 / 5</div><div style="font-size:13px;color:var(--tx3);">مناسب للطلاب ذوي الخلفية المتوسطة</div></div>
+    </div>
+    <div style="margin-bottom:16px;"><div class="prog-row"><span>نقاط القوة</span><span style="color:#36B847;font-weight:700;">الخوارزميات، Python</span></div></div>
+    <div style="margin-bottom:20px;"><div class="prog-row"><span>يحتاج تحسين</span><span style="color:#E24B4A;font-weight:700;">التعلم العميق، الشبكات العصبية</span></div></div>
+    <button class="btn-pr" style="width:100%;padding:12px;" onclick="closeModal('level-modal');openQuizPicker('level')">أعد الاختبار القبلي</button>
+  </div>
+</div>
+
+<!-- QUIZ MODAL -->
+<div class="modal-overlay" id="quiz-modal">
+  <div class="modal" style="max-width:680px;">
+    <button class="modal-close" onclick="closeModal('quiz-modal')">✕</button>
+
+    <!-- STEP 1 — SUBJECT PICKER -->
+    <div id="quiz-step-pick">
+      <h3 class="modal-title" id="quiz-pick-title">📚 اختر المادة</h3>
+      <p class="modal-sub">حدّد المادة لبدء الاختبار · 5 أسئلة لكل مادة</p>
+      <div id="quiz-subjects-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;"></div>
+    </div>
+
+    <!-- STEP 2 — QUESTIONS -->
+    <div id="quiz-step-questions" class="hidden">
+      <button onclick="backToQuizPicker()" style="background:none;border:none;color:var(--tx3);cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:4px;">→ غيّر المادة</button>
+      <h3 class="modal-title" id="quiz-title-dyn">اختبار</h3>
+      <p class="modal-sub" id="quiz-subject-name">—</p>
+      <div style="background:var(--prl);border-radius:var(--r3);padding:10px 16px;margin-bottom:20px;display:flex;justify-content:space-between;align-items:center;">
+        <span style="font-size:13px;font-weight:600;">السؤال <span id="q-num">1</span> من <span id="q-total">5</span></span>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span style="font-size:12px;color:var(--prd);font-weight:700;">النقاط: <span id="q-score">0</span></span>
+          <div class="prog-bar" style="width:120px"><div class="prog-fill" id="q-prog" style="width:20%"></div></div>
+        </div>
+      </div>
+      <div class="quiz-container">
+        <div class="quiz-q" id="quiz-question">—</div>
+        <div class="quiz-opt" id="quiz-options"></div>
+      </div>
+    </div>
+
+    <!-- STEP 3 — RESULT -->
+    <div id="quiz-step-result" class="hidden" style="text-align:center;padding:20px;">
+      <div id="quiz-result-icon" style="font-size:52px;margin-bottom:12px;">🎉</div>
+      <h3 style="font-size:22px;font-weight:700;margin-bottom:8px;">انتهى الاختبار!</h3>
+      <p style="font-size:14px;color:var(--tx2);margin-bottom:8px;" id="quiz-result-msg">—</p>
+      <p style="font-size:32px;font-weight:900;color:var(--pr);margin-bottom:6px;"><span id="quiz-result-pct">0</span>%</p>
+      <p style="font-size:14px;color:var(--tx2);margin-bottom:18px;">المستوى: <strong style="color:var(--pr);" id="quiz-result-label">—</strong></p>
+      <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+        <button class="btn-out" style="padding:10px 24px;" onclick="resetQuiz()">اختبار مادة أخرى</button>
+        <button class="btn-pr" style="padding:10px 24px;" onclick="nextQuiz()">الاختبار التالي</button>
+        <button class="btn-pr" style="padding:10px 24px;" onclick="closeModal('quiz-modal')">إنهاء</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON MODAL -->
+<div class="modal-overlay" id="lesson-modal">
+  <div class="modal" style="max-width:860px;">
+    <button class="modal-close" onclick="closeModal('lesson-modal')">✕</button>
+    <div class="lesson-header">
+      <div style="font-size:12px;opacity:.8;margin-bottom:4px;">البرمجة والذكاء الاصطناعي · الوحدة الأولى</div>
+      <h3 style="font-size:20px;font-weight:700;">الدرس الأول: مقدمة في الذكاء الاصطناعي</h3>
+      <div style="margin-top:12px;display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap;">
+        <button class="btn-pr" style="padding:10px 20px;font-size:13px;" onclick="startPostLessonQuiz()">اختبار بعدي</button>
+      </div>
+      <div id="lt-quiz-gate-note" class="hidden" style="margin-top:14px;padding:12px 14px;background:#FEECEC;border:1px solid #E24B4A;border-radius:var(--r3);color:#A32D2D;font-size:13px;">⚠️ يجب حل الاختبار بعد الدرس قبل متابعة الدرس التالي. اضغطي "اختبار بعدي" لإكمال الاختبار.</div>
+    </div>
+    <div class="lesson-body">
+      <div class="content-tabs">
+        <div class="ct active" onclick="switchLessonTab('video',this)">📹 فيديو الشرح</div>
+        <div class="ct" onclick="switchLessonTab('ppt',this)">📊 عرض PowerPoint</div>
+        <div class="ct" onclick="switchLessonTab('podcast',this)">🎙️ بودكاست</div>
+        <div class="ct" onclick="switchLessonTab('mindmap',this)">🗺️ خريطة ذهنية</div>
+        <div class="ct" onclick="switchLessonTab('pdf',this)">📄 PDF</div>
+        <div class="ct" onclick="switchLessonTab('tarbawi-lesson',this)">💚 تربوي</div>
+      </div>
+
+      <!-- VIDEO TAB -->
+      <div id="lt-video">
+        <div id="lt-video-frame" style="background:#000;border-radius:var(--r2);overflow:hidden;margin-bottom:14px;aspect-ratio:16/9;">
+          <iframe id="lt-video-iframe" width="100%" height="100%" src="https://drive.google.com/file/d/1areMaXg2LpX4F9UWHJK49tLtP_4CCwYY/preview" frameborder="0" allow="autoplay" allowfullscreen style="display:block;"></iframe>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;">
+          <div>
+            <div id="lt-video-title" style="font-size:14px;font-weight:600;">فيديو AI — الدرس الأول: مقدمة في الذكاء الاصطناعي</div>
+            <div id="lt-video-sub" style="font-size:12px;color:var(--tx3);">الوحدة 1 · البرمجة والذكاء الاصطناعي · الأول الثانوي 2025-2026</div>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <button class="l-btn" id="lt-video-dl" onclick="window.open('https://drive.google.com/file/d/1areMaXg2LpX4F9UWHJK49tLtP_4CCwYY/view','_blank')">📥 فتح في Drive</button>
+          </div>
+        </div>
+        <div style="margin-top:14px;padding:12px;background:var(--prl);border-radius:var(--r3);border:1px solid var(--bdr2);">
+          <p style="font-size:12px;font-weight:700;color:var(--prd);margin-bottom:6px;">💚 الرسالة التربوية لهذا الدرس:</p>
+          <p style="font-size:12px;color:var(--tx2);">الذكاء الاصطناعي أداة بين يديك — استخدامه لبناء مستقبل أفضل مسؤوليتك الأخلاقية. العلم بدون ضمير خطر على البشرية.</p>
+        </div>
+      </div>
+
+      <!-- PPT TAB -->
+      <div id="lt-ppt" class="hidden">
+        <div style="background:#0d1117;border-radius:var(--r2);overflow:hidden;margin-bottom:14px;aspect-ratio:16/9;">
+          <iframe id="lt-ppt-iframe" width="100%" height="100%" src="https://drive.google.com/file/d/1ajl4JZaYJYAc4D05v8X8vyXvHfFObnHA/preview" frameborder="0" allowfullscreen style="display:block;"></iframe>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:12px;">
+          <div>
+            <div id="lt-ppt-title" style="font-size:14px;font-weight:600;">عرض PowerPoint — الدرس الأول: مقدمة AI</div>
+            <div style="font-size:12px;color:var(--tx3);">شرائح تفاعلية — Google Drive</div>
+          </div>
+          <button class="l-btn" id="lt-ppt-dl" onclick="window.open('https://drive.google.com/file/d/1ajl4JZaYJYAc4D05v8X8vyXvHfFObnHA/view','_blank')">📥 فتح في Drive</button>
+        </div>
+        <div class="col3" style="margin-bottom:0;">
+          <div style="text-align:center;padding:14px;background:var(--bg);border-radius:var(--r3);border:1px solid var(--bdr);"><div style="font-size:24px;margin-bottom:6px;">1️⃣</div><div style="font-size:12px;font-weight:600;">ما هو الذكاء الاصطناعي؟</div></div>
+          <div style="text-align:center;padding:14px;background:var(--bg);border-radius:var(--r3);border:1px solid var(--bdr);"><div style="font-size:24px;margin-bottom:6px;">2️⃣</div><div style="font-size:12px;font-weight:600;">تاريخ وتطور AI</div></div>
+          <div style="text-align:center;padding:14px;background:var(--bg);border-radius:var(--r3);border:1px solid var(--bdr);"><div style="font-size:24px;margin-bottom:6px;">3️⃣</div><div style="font-size:12px;font-weight:600;">تطبيقات AI في حياتنا</div></div>
+        </div>
+      </div>
+
+      <!-- PODCAST TAB -->
+      <div id="lt-podcast" class="hidden">
+        <div class="podcast-player">
+          <div class="pod-art">🎙️</div>
+          <div class="pod-info">
+            <div class="pod-title" id="lt-pod-title">بودكاست — الدرس الأول: مقدمة AI</div>
+            <div class="pod-sub" id="lt-pod-sub">البرمجة والذكاء الاصطناعي · بودكاست تعليمي</div>
+          </div>
+        </div>
+        <div style="background:#0d1117;border-radius:var(--r2);overflow:hidden;margin-top:14px;">
+          <iframe id="lt-pod-iframe" width="100%" height="80" src="https://drive.google.com/file/d/19smzLFXCkDKTGMmtCWDW1yi1ck9DUw4V/preview" frameborder="0" allow="autoplay" style="display:block;"></iframe>
+        </div>
+        <div style="display:flex;justify-content:flex-end;margin-top:10px;">
+          <button class="l-btn" id="lt-pod-dl" onclick="window.open('https://drive.google.com/file/d/19smzLFXCkDKTGMmtCWDW1yi1ck9DUw4V/view','_blank')">📥 فتح في Drive</button>
+        </div>
+        <div style="margin-top:14px;padding:12px;background:var(--prl);border-radius:var(--r3);"><p style="font-size:12px;color:var(--tx2);">💡 استمعي للبودكاست أثناء المذاكرة أو في الطريق للمدرسة!</p></div>
+      </div>
+
+      <!-- MIND MAP TAB -->
+      <div id="lt-mindmap" class="hidden">
+        <div id="lt-mindmap-graphic" class="mind-map-container"></div>
+        <p id="lt-mindmap-caption" style="font-size:12px;color:var(--tx3);text-align:center;margin-top:8px;margin-bottom:14px;">خريطة ذهنية لمفاهيم الذكاء الاصطناعي — الدرس الأول</p>
+        <div style="background:#0d1117;border-radius:var(--r2);overflow:hidden;margin-bottom:10px;aspect-ratio:4/5;max-height:520px;">
+          <iframe id="lt-info-iframe" width="100%" height="100%" src="https://drive.google.com/file/d/1yWDLfeSVVh2CrA0fBNQwC1arVOCmhlm4/preview" frameborder="0" allowfullscreen style="display:block;"></iframe>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div id="lt-info-label" style="font-size:12px;color:var(--tx3);">📌 خريطة ذهنية وملف مرئي للمفاهيم</div>
+            <div id="lt-info-note" style="font-size:11px;color:var(--tx3);">رؤية مرئية للمفاهيم الرئيسية</div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+            <button class="l-btn" id="lt-infographic-dl" onclick="window.open('https://drive.google.com/file/d/1rPfVae4LrghOG_qYtiz0f8doxdsjVdx0/view','_blank')">📥 عرض الإنفوجرافيك</button>
+            <button class="l-btn" id="lt-info-dl" onclick="window.open('https://drive.google.com/file/d/1yWDLfeSVVh2CrA0fBNQwC1arVOCmhlm4/view','_blank')">📥 فتح الخريطة الذهنية</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PDF TAB -->
+      <div id="lt-pdf" class="hidden">
+        <div style="background:#0d1117;border-radius:var(--r2);overflow:hidden;margin-bottom:12px;height:560px;">
+          <iframe id="lt-pdf-iframe" width="100%" height="100%" src="https://drive.google.com/file/d/1uBpPn2rpy1QGT0v_W6R7HNY747lJG9Iy/preview" frameborder="0" allowfullscreen style="display:block;"></iframe>
+        </div>
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+          <div>
+            <div id="lt-pdf-title" style="font-size:14px;font-weight:600;">PDF الدرس الأول — البرمجة والذكاء الاصطناعي</div>
+            <div style="font-size:12px;color:var(--tx3);">الأول الثانوي · المنهج 2025-2026</div>
+          </div>
+          <button class="btn-pr" id="lt-pdf-dl" style="font-size:12px;padding:8px 16px;" onclick="window.open('https://drive.google.com/file/d/1uBpPn2rpy1QGT0v_W6R7HNY747lJG9Iy/view','_blank')">📥 فتح في Drive</button>
+        </div>
+      </div>
+
+      <!-- TARBAWI LESSON TAB -->
+      <div id="lt-tarbawi-lesson" class="hidden">
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div class="tarbawi-card" onclick="window.open('https://www.youtube.com/results?search_query=الأمانة+في+استخدام+التكنولوجيا','_blank')">
+            <div style="font-size:28px;margin-bottom:8px;">💚</div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">الأمانة الرقمية في استخدام AI</div>
+            <div style="font-size:12px;opacity:.85;">كيف نستخدم الذكاء الاصطناعي باستخدام أخلاقي ومسؤول؟</div>
+          </div>
+          <div class="tarbawi-card" style="background:linear-gradient(135deg,#1a0d3b,#2d1b69);" onclick="window.open('https://www.youtube.com/results?search_query=دور+الشباب+في+مستقبل+التكنولوجيا','_blank')">
+            <div style="font-size:28px;margin-bottom:8px;">🚀</div>
+            <div style="font-weight:700;font-size:14px;margin-bottom:4px;">أنتِ صانعة المستقبل</div>
+            <div style="font-size:12px;opacity:.85;">قصص نماذج شبابية عربية في مجال الذكاء الاصطناعي</div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end lesson-body -->
+  </div>
+</div>
+
+<!-- SUBJECT MODAL — 10 TABS -->
+<div class="modal-overlay" id="subject-modal">
+  <div class="modal" style="max-width:820px;">
+    <button class="modal-close" onclick="closeModal('subject-modal')">✕</button>
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:16px;">
+      <div id="subj-modal-icon" style="width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:26px;background:linear-gradient(135deg,#FFF0E6,#FFDCC4);flex-shrink:0;">💻</div>
+      <div>
+        <h3 class="modal-title" id="subj-modal-title" style="margin-bottom:2px;">البرمجة والذكاء الاصطناعي</h3>
+        <div style="display:flex;align-items:center;gap:8px;flex-wrap:wrap;">
+          <span style="font-size:12px;color:var(--tx3);">الأول الثانوي — المنهج 2025-2026</span>
+          <span class="badge b-warn" id="subj-level-badge">حدد مستواك أولاً</span>
+        </div>
+      </div>
+    </div>
+    <!-- Level check banner -->
+    <div id="subj-level-banner" style="margin-bottom:14px;padding:12px 16px;background:var(--prl);border-radius:var(--r3);border:1px solid var(--bdr2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;">
+      <div>
+        <div style="font-size:12px;color:var(--prd);font-weight:600;">⚠️ يجب اجتياز اختبار تحديد المستوى قبل الدخول للدروس</div>
+        <div id="subj-level-note" style="font-size:12px;color:var(--tx3);margin-top:6px;">لن يتم فتح الدروس أو أي محتوى تعليمي متقدّم في هذه المادة قبل نجاحك في الاختبار.</div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;">
+        <button class="btn-pr" style="font-size:11px;padding:7px 16px;" onclick="startLevelTest()">ابدأ اختبار المستوى</button>
+        <button class="btn-out" style="font-size:11px;padding:7px 16px;" onclick="openSubjectChat(currentSubjectId)">اسأل المساعد عن المادة</button>
+      </div>
+    </div>
+    <!-- tab bar -->
+    <div class="subj-tabs" id="subj-tab-bar">
+      <div class="subj-tab active" onclick="subjectInnerTab('book',this)">📖 الكتاب المدرسي</div>
+      <div class="subj-tab" onclick="subjectInnerTab('explain',this)">🎓 شرح الدرس</div>
+      <div class="subj-tab" onclick="subjectInnerTab('pdf',this)">📄 PDF</div>
+      <div class="subj-tab" onclick="subjectInnerTab('videos',this)">🎬 فيديوهات</div>
+      <div class="subj-tab" onclick="subjectInnerTab('exercises',this)">✏️ تدريبات</div>
+      <div class="subj-tab" onclick="subjectInnerTab('games',this)">🎮 ألعاب</div>
+      <div class="subj-tab" onclick="subjectInnerTab('quiz',this)">📝 اختبارات</div>
+      <div class="subj-tab" onclick="subjectInnerTab('podcast',this)">🎙️ بودكاست</div>
+      <div class="subj-tab" onclick="subjectInnerTab('mindmap',this)">🗺️ مخطط</div>
+      <div class="subj-tab" onclick="subjectInnerTab('aitools',this)" style="background:linear-gradient(135deg,#7B3ADB,#9B5AE5);color:#fff;">🤖 أدوات AI</div>
+      <div class="subj-tab" onclick="subjectInnerTab('links',this)">🔗 روابط خارجية</div>
+    </div>
+
+    <!-- BOOK PANE -->
+    <div class="subj-pane active" id="sp-book">
+      <div id="sp-book-content">
+        <div style="text-align:center;padding:30px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);">
+          <div style="font-size:48px;margin-bottom:12px;">📖</div>
+          <p style="font-size:14px;font-weight:600;margin-bottom:16px;" id="sp-book-title">الكتاب المدرسي</p>
+          <div id="sp-book-links" style="display:flex;flex-direction:column;gap:10px;max-width:400px;margin:0 auto;"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EXPLAIN PANE -->
+    <div class="subj-pane" id="sp-explain">
+      <div id="sp-explain-units" style="display:flex;flex-direction:column;gap:10px;"></div>
+    </div>
+
+    <!-- PDF PANE -->
+    <div class="subj-pane" id="sp-pdf">
+      <div id="sp-pdf-links" style="display:flex;flex-direction:column;gap:10px;"></div>
+    </div>
+
+    <!-- VIDEOS PANE -->
+    <div class="subj-pane" id="sp-videos">
+      <div id="sp-videos-grid" class="col3" style="margin-bottom:0;"></div>
+    </div>
+
+    <!-- EXERCISES PANE -->
+    <div class="subj-pane" id="sp-exercises">
+      <div class="card">
+        <div class="sec-title">تدريب تفاعلي</div>
+        <div id="exercise-q" style="font-size:15px;font-weight:600;color:var(--tx);margin-bottom:14px;line-height:1.6;"></div>
+        <div id="exercise-opts" style="display:flex;flex-direction:column;gap:10px;"></div>
+        <div id="exercise-feedback" class="hidden" style="margin-top:14px;padding:12px;border-radius:var(--r3);font-size:13px;"></div>
+      </div>
+    </div>
+
+    <!-- GAMES PANE (mini) -->
+    <div class="subj-pane" id="sp-games">
+      <div class="col3">
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="closeModal('subject-modal');openGamesWithCheck()"><div style="font-size:36px;margin-bottom:8px;">❓</div><div style="font-weight:700;font-size:13px;margin-bottom:4px;">اختبر نفسك</div><div style="font-size:11px;color:var(--tx3);">أسئلة سريعة وتنافسية</div></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="closeModal('subject-modal');openGamesWithCheck()"><div style="font-size:36px;margin-bottom:8px;">🔗</div><div style="font-weight:700;font-size:13px;margin-bottom:4px;">صلي المفاهيم</div><div style="font-size:11px;color:var(--tx3);">وصل المصطلح بمعناه</div></div>
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="closeModal('subject-modal');openGamesWithCheck()"><div style="font-size:36px;margin-bottom:8px;">🧩</div><div style="font-weight:700;font-size:13px;margin-bottom:4px;">ألغاز تعليمية</div><div style="font-size:11px;color:var(--tx3);">ألغاز وتحديات ذكاء</div></div>
+      </div>
+    </div>
+
+    <!-- QUIZ PANE -->
+    <div class="subj-pane" id="sp-quiz">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div class="card" style="text-align:center;cursor:pointer;" onclick="closeModal('subject-modal');startQuizFromSubjectModal()"><div style="font-size:36px;margin-bottom:10px;">📝</div><div style="font-weight:700;margin-bottom:5px;">اختبار تحديد المستوى</div><div style="font-size:12px;color:var(--tx3);margin-bottom:14px;">5 أسئلة · يحدد مستواك</div><button class="btn-pr" style="padding:9px 20px;font-size:12px;">ابدأ</button></div>
+        <div class="card"><div class="sec-title">نتائج اختباراتك</div><div id="sp-quiz-history" style="font-size:13px;color:var(--tx3);">لا توجد نتائج بعد.</div></div>
+      </div>
+    </div>
+
+    <!-- PODCAST PANE -->
+    <div class="subj-pane" id="sp-podcast">
+      <div class="podcast-player">
+        <div class="pod-art">🎙️</div>
+        <div class="pod-info">
+          <div class="pod-title" id="sp-pod-title">بودكاست المادة</div>
+          <div class="pod-sub">25 دقيقة — استمعي أثناء المذاكرة</div>
+          <div class="pod-controls">
+            <button class="pod-btn">⏮</button>
+            <button class="pod-btn play" id="sp-pod-play" onclick="togglePodcast()">▶</button>
+            <button class="pod-btn">⏭</button>
+            <input type="range" class="pod-range" id="sp-pod-range" value="0" max="100" style="flex:1;" oninput="updatePod(this.value)">
+            <span id="sp-pod-time" style="font-size:12px;opacity:.75;">0:00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MINDMAP PANE -->
+    <div class="subj-pane" id="sp-mindmap">
+      <div class="mind-map-container">
+        <div id="sp-mindmap-content">
+          <svg width="100%" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" font-family="Cairo,sans-serif" direction="rtl">
+            <rect x="275" y="175" width="150" height="50" rx="25" fill="#FF8C42"/>
+            <text x="350" y="205" text-anchor="middle" fill="white" font-size="14" font-weight="700" id="mm-center">المادة الدراسية</text>
+            <line x1="350" y1="175" x2="350" y2="100" stroke="#FF8C42" stroke-width="2"/>
+            <rect x="270" y="70" width="160" height="40" rx="20" fill="#FFF4ED" stroke="#FF8C42" stroke-width="1.5"/>
+            <text x="350" y="95" text-anchor="middle" fill="#E67030" font-size="12" font-weight="600">الوحدة الأولى</text>
+            <line x1="275" y1="200" x2="150" y2="150" stroke="#3B8FDB" stroke-width="2"/>
+            <rect x="50" y="125" width="120" height="40" rx="20" fill="#E6F4FF" stroke="#3B8FDB" stroke-width="1.5"/>
+            <text x="110" y="150" text-anchor="middle" fill="#1B5FA5" font-size="12" font-weight="600">الوحدة الثانية</text>
+            <line x1="425" y1="200" x2="550" y2="150" stroke="#36B847" stroke-width="2"/>
+            <rect x="510" y="125" width="150" height="40" rx="20" fill="#E6FFE8" stroke="#36B847" stroke-width="1.5"/>
+            <text x="585" y="150" text-anchor="middle" fill="#1B8A30" font-size="12" font-weight="600">الوحدة الثالثة</text>
+            <line x1="350" y1="225" x2="350" y2="310" stroke="#E67030" stroke-width="2"/>
+            <rect x="240" y="310" width="220" height="40" rx="20" fill="#FFF4ED" stroke="#E67030" stroke-width="1.5"/>
+            <text x="350" y="335" text-anchor="middle" fill="#E67030" font-size="12" font-weight="600">الاختبارات والتقييم</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI TOOLS PANE — student-side content generation -->
+    <div class="subj-pane" id="sp-aitools">
+      <div style="text-align:center;padding:18px 14px;background:linear-gradient(135deg,#FAF5FF,#F0E6FF);border-radius:var(--r2);border:1px solid #E1D5FF;margin-bottom:14px;">
+        <div style="font-size:34px;margin-bottom:8px;">🤖</div>
+        <div style="font-size:15px;font-weight:700;margin-bottom:4px;">ولّد محتوى تعليمي بالذكاء الاصطناعي</div>
+        <div style="font-size:12px;color:var(--tx3);">اختر النوع — يُولَّد فعلياً ومخصّص لمستواك في هذه المادة</div>
+      </div>
+      <div class="col3" id="sp-aitools-grid" style="margin-bottom:0;"></div>
+    </div>
+
+    <!-- EXTERNAL LINKS PANE -->
+    <div class="subj-pane" id="sp-links">
+      <div style="display:flex;flex-direction:column;gap:12px;">
+        <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="window.open('https://www.ekb.eg/ar/home','_blank')">
+          <div style="width:44px;height:44px;background:linear-gradient(135deg,var(--pr),var(--prd));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">🏛️</div>
+          <div><div style="font-size:14px;font-weight:600;">بنك المعرفة المصري — EKB</div><div style="font-size:12px;color:var(--tx3);">ekb.eg — المصدر الرسمي للكتب والمراجع التعليمية</div></div>
+          <span style="margin-right:auto;font-size:18px;color:var(--tx3);">←</span>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="window.open('https://www.youtube.com/@medrasatona','_blank')">
+          <div style="width:44px;height:44px;background:linear-gradient(135deg,#E24B4A,#A32D2D);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">🎬</div>
+          <div><div style="font-size:14px;font-weight:600;">قناة مدرستنا على يوتيوب</div><div style="font-size:12px;color:var(--tx3);">youtube.com/@medrasatona — أرشيف الحلقات التعليمية الرسمية</div></div>
+          <span style="margin-right:auto;font-size:18px;color:var(--tx3);">←</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- LAB MODAL -->
+<div class="modal-overlay" id="lab-modal">
+  <div class="modal" style="max-width:820px;">
+    <button class="modal-close" onclick="closeModal('lab-modal')">✕</button>
+    <h3 class="modal-title">🧪 المعمل الافتراضي التفاعلي</h3>
+    <p class="modal-sub">محاكاة حقيقية لتجارب — حرّك الإعدادات وشاهد التغير مباشرةً</p>
+    <div class="lab-container">
+      <!-- علمي علوم -->
+      <div class="lab-toolbar" id="lab-toolbar-sci" style="display:none;">
+        <button class="lab-tool active" onclick="runLab(this,'chem')">⚗️ كيمياء — pH</button>
+        <button class="lab-tool" onclick="runLab(this,'ohm')">⚡ فيزياء — قانون أوم</button>
+        <button class="lab-tool" onclick="runLab(this,'physics')">🪀 فيزياء — البندول</button>
+        <button class="lab-tool" onclick="runLab(this,'bio')">🦠 أحياء — الخلية</button>
+        <button class="lab-tool" onclick="runLab(this,'dna')">🧬 أحياء — DNA</button>
+        <button class="lab-tool" onclick="runLab(this,'ai')">🤖 AI — تدريب نموذج</button>
+      </div>
+      <!-- علمي رياضة -->
+      <div class="lab-toolbar" id="lab-toolbar-scimath" style="display:none;">
+        <button class="lab-tool active" onclick="runLab(this,'vectors')">📐 رياضيات — المتجهات</button>
+        <button class="lab-tool" onclick="runLab(this,'function_graph')">📈 رياضيات — رسم الدوال</button>
+        <button class="lab-tool" onclick="runLab(this,'ohm')">⚡ فيزياء — قانون أوم</button>
+        <button class="lab-tool" onclick="runLab(this,'physics')">🪀 فيزياء — البندول</button>
+        <button class="lab-tool" onclick="runLab(this,'chem')">⚗️ كيمياء — pH</button>
+        <button class="lab-tool" onclick="runLab(this,'ai')">🤖 AI — تدريب نموذج</button>
+      </div>
+      <!-- أدبي -->
+      <div class="lab-toolbar" id="lab-toolbar-lit" style="display:none;">
+        <button class="lab-tool active" onclick="runLab(this,'arabic_analysis')">📜 لغة عربية — تحليل النص</button>
+        <button class="lab-tool" onclick="runLab(this,'rhetoric')">🎭 بلاغة — الصور البيانية</button>
+        <button class="lab-tool" onclick="runLab(this,'history_sim')">🏛️ تاريخ — خط زمني</button>
+        <button class="lab-tool" onclick="runLab(this,'logic')">🧠 منطق — القياس الصوري</button>
+      </div>
+      <div class="lab-canvas" id="lab-canvas" style="min-height:340px;flex-direction:column;gap:12px;padding:20px;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODELS MODAL -->
+<div class="modal-overlay" id="models-modal">
+  <div class="modal" style="max-width:880px;">
+    <button class="modal-close" onclick="closeModal('models-modal')">✕</button>
+    <h3 class="modal-title">🏛️ نماذج ومجسمات ثلاثية الأبعاد</h3>
+    <p class="modal-sub">اضغط على أي مجسم لفتحه — اسحب بالماوس لتدويره في الاتجاه الذي تريد</p>
+    <div id="models-grid" class="col3" style="margin-top:14px;"></div>
+  </div>
+</div>
+
+<!-- 3D MODEL DETAIL MODAL -->
+<div class="modal-overlay" id="model-detail-modal">
+  <div class="modal" style="max-width:680px;">
+    <button class="modal-close" onclick="closeModal('model-detail-modal')">✕</button>
+    <h3 class="modal-title" id="md-title">—</h3>
+    <p class="modal-sub" id="md-sub">—</p>
+    <div style="background:linear-gradient(135deg,#0d1117,#1a1f2e);border-radius:var(--r);padding:24px;margin-top:14px;">
+      <div class="imodel-stage" id="md-stage">
+        <div class="imodel-obj spinning" id="md-obj"></div>
+      </div>
+      <div style="text-align:center;margin-top:8px;font-size:11px;color:rgba(255,255,255,.5);">🖱️ اسحب للتدوير · اضغط زر التشغيل التلقائي للإيقاف</div>
+      <div style="display:flex;justify-content:center;gap:8px;margin-top:10px;flex-wrap:wrap;">
+        <button onclick="toggleModelSpin()" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:11px;cursor:pointer;" id="md-spin-btn">⏸ إيقاف التدوير التلقائي</button>
+        <button onclick="resetModelRotation()" style="background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);padding:6px 14px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:11px;cursor:pointer;">⟲ إعادة ضبط</button>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding:14px;background:var(--prl);border-radius:var(--r3);">
+      <div style="font-size:13px;font-weight:700;color:var(--prd);margin-bottom:6px;">📚 معلومات</div>
+      <div id="md-info" style="font-size:13px;color:var(--tx2);line-height:1.7;">—</div>
+    </div>
+  </div>
+</div>
+
+<!-- LIVE BROADCAST MODAL — البث المباشر لقناة مدرستنا -->
+<div class="modal-overlay" id="live-broadcast-modal">
+  <div class="modal" style="max-width:780px;">
+    <button class="modal-close" onclick="closeModal('live-broadcast-modal')">✕</button>
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+      <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#E24B4A,#A32D2D);display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;flex-shrink:0;">📡</div>
+      <div style="flex:1;min-width:0;">
+        <h3 class="modal-title" style="margin:0;">البث المباشر — قناة مدرستنا</h3>
+        <div style="display:flex;align-items:center;gap:8px;margin-top:4px;flex-wrap:wrap;">
+          <span style="display:inline-flex;align-items:center;gap:6px;background:#FEECEC;border:1px solid #F4A1A0;border-radius:50px;padding:3px 10px;font-size:11px;font-weight:700;color:#A32D2D;"><span class="live-dot"></span> ON AIR</span>
+          <span style="font-size:11px;color:var(--tx3);">القناة الرسمية للتعليم في مصر</span>
+        </div>
+      </div>
+    </div>
+    <div style="background:linear-gradient(135deg,#1a0d0d,#3b1717);border-radius:var(--r2);padding:34px 24px;text-align:center;color:#fff;overflow:hidden;position:relative;">
+      <div style="font-size:64px;margin-bottom:14px;line-height:1;">📺</div>
+      <h3 style="font-size:20px;font-weight:900;margin-bottom:8px;">قناة مدرستنا — البث المباشر</h3>
+      <p style="opacity:.8;font-size:13px;margin-bottom:22px;line-height:1.7;">شاهد البث المباشر للحلقات التعليمية الرسمية للمنهج المصري على YouTube — اضغط الزر بالأسفل لفتح البث.</p>
+      <button class="btn-pr" onclick="window.open('https://www.youtube.com/@medrasatona/live','_blank')" style="background:#E24B4A;font-size:14px;padding:14px 36px;font-weight:800;">▶ افتح البث المباشر الآن</button>
+    </div>
+    <div class="col3" style="margin-top:14px;margin-bottom:0;">
+      <a href="https://www.youtube.com/@medrasatona/streams" target="_blank" style="text-decoration:none;color:inherit;">
+        <div class="card" style="text-align:center;cursor:pointer;padding:14px;">
+          <div style="font-size:26px;margin-bottom:6px;">📋</div>
+          <div style="font-size:12px;font-weight:700;">جدول البث</div>
+          <div style="font-size:10px;color:var(--tx3);margin-top:3px;">كل الحلقات المباشرة</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/@medrasatona" target="_blank" style="text-decoration:none;color:inherit;">
+        <div class="card" style="text-align:center;cursor:pointer;padding:14px;">
+          <div style="font-size:26px;margin-bottom:6px;">🎬</div>
+          <div style="font-size:12px;font-weight:700;">قناة مدرستنا</div>
+          <div style="font-size:10px;color:var(--tx3);margin-top:3px;">YouTube الرسمي</div>
+        </div>
+      </a>
+      <a href="https://www.youtube.com/@medrasatona/videos" target="_blank" style="text-decoration:none;color:inherit;">
+        <div class="card" style="text-align:center;cursor:pointer;padding:14px;">
+          <div style="font-size:26px;margin-bottom:6px;">📹</div>
+          <div style="font-size:12px;font-weight:700;">أرشيف الحلقات</div>
+          <div style="font-size:10px;color:var(--tx3);margin-top:3px;">الفيديوهات السابقة</div>
+        </div>
+      </a>
+    </div>
+    <div style="margin-top:12px;padding:10px 12px;background:var(--prl);border-radius:var(--r3);font-size:12px;color:var(--tx2);line-height:1.7;">
+      💡 <strong>ملاحظة:</strong> إذا لم يكن هناك بث على الهواء حالياً ستفتح صفحة القناة لتختاري آخر حلقة سُجِّلت.
+    </div>
+  </div>
+</div>
+
+<!-- LIBRARY MODAL -->
+<div class="modal-overlay" id="library-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('library-modal')">✕</button>
+    <h3 class="modal-title">🏛️ بنك المعرفة المصري</h3>
+    <p class="modal-sub">مصادر رسمية معتمدة من وزارة التربية والتعليم</p>
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="window.open('https://www.ekb.eg/ar/home','_blank')">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#1B6DB5,#3B8FDB);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">🏛️</div>
+        <div><div style="font-size:14px;font-weight:600;">بنك المعرفة المصري</div><div style="font-size:12px;color:var(--tx3);">www.ekb.eg/ar/home</div></div>
+        <span style="margin-right:auto;font-size:18px;color:var(--tx3);">←</span>
+      </div>
+      <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="window.open('https://madrasetnaplus.eg/courses;NavigateCoursesTypes=Row;selectedIndex=307691','_blank')">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,var(--pr),var(--prd));border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">🎓</div>
+        <div><div style="font-size:14px;font-weight:600;">منصة مدرستنا Plus — دورات الأول الثانوي</div><div style="font-size:12px;color:var(--tx3);">madrasetnaplus.eg</div></div>
+        <span style="margin-right:auto;font-size:18px;color:var(--tx3);">←</span>
+      </div>
+      <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="window.open('https://ellibrary.moe.gov.eg/books/','_blank')">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#36B847,#1B8A30);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">📚</div>
+        <div><div style="font-size:14px;font-weight:600;">الكتب الدراسية الرقمية</div><div style="font-size:12px;color:var(--tx3);">ellibrary.moe.gov.eg/books</div></div>
+        <span style="margin-right:auto;font-size:18px;color:var(--tx3);">←</span>
+      </div>
+      <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="window.open('https://ellibrary.moe.gov.eg/sec3guideforms/','_blank')">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#9B5AE5,#7B3ADB);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">📝</div>
+        <div><div style="font-size:14px;font-weight:600;">النماذج الاسترشادية</div><div style="font-size:12px;color:var(--tx3);">امتحانات تجريبية رسمية</div></div>
+        <span style="margin-right:auto;font-size:18px;color:var(--tx3);">←</span>
+      </div>
+      <div style="padding:14px;background:linear-gradient(135deg,#FEECEC,#FFD6D6);border-radius:var(--r2);border:1px solid #FFB3B3;display:flex;align-items:center;gap:12px;cursor:pointer;" onclick="window.open('https://stream.moe.gov.eg/?fbclid=IwAR0WDjxBIq58Kn9b0eTQ5LzLFDluG-9GwxVDLtNAqT4vZ0b7csDXU3lXRaQ','_blank')">
+        <div style="width:44px;height:44px;background:linear-gradient(135deg,#E24B4A,#A32D2D);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">📡</div>
+        <div><div style="font-size:14px;font-weight:600;">منصة البث المباشر الرسمية لوزارة التربية والتعليم</div><div style="font-size:12px;color:var(--tx3);">stream.moe.gov.eg — الحصص الافتراضية</div></div>
+        <span style="margin-right:auto;font-size:18px;color:#A32D2D;">←</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CODE LAB MODAL -->
+<div class="modal-overlay" id="code-lab-modal">
+  <div class="modal" style="max-width:760px;">
+    <button class="modal-close" onclick="closeModal('code-lab-modal')">✕</button>
+    <h3 class="modal-title">💻 معمل البرمجة التفاعلي</h3>
+    <p class="modal-sub">اكتب وشغّل الكود مباشرة</p>
+    <div style="background:#1e1e2e;border-radius:var(--r2);overflow:hidden;">
+      <div style="background:#13131f;padding:10px 16px;display:flex;align-items:center;gap:8px;border-bottom:1px solid rgba(255,255,255,.1);">
+        <div style="width:12px;height:12px;border-radius:50%;background:#E24B4A;"></div>
+        <div style="width:12px;height:12px;border-radius:50%;background:#FFB380;"></div>
+        <div style="width:12px;height:12px;border-radius:50%;background:#36B847;"></div>
+        <span style="color:rgba(255,255,255,.5);font-size:12px;margin-right:8px;">main.py — Python</span>
+      </div>
+      <textarea id="code-editor" style="width:100%;height:200px;background:#1e1e2e;color:#e2e8f0;border:none;padding:16px;font-family:monospace;font-size:13px;outline:none;resize:vertical;"># مرحباً بك في معمل البرمجة SmartLearn HS!
+# اكتب أي كود Python هنا
+
+def greet(name):
+    return f"مرحباً، {name}! أهلاً في SmartLearn HS 🎓"
+
+message = greet("طالب")
+print(message)
+
+# جرّبي الذكاء الاصطناعي:
+import random
+numbers = [random.randint(1, 100) for _ in range(10)]
+print("أرقام عشوائية:", numbers)
+print("المتوسط:", sum(numbers) / len(numbers))
+</textarea>
+      <div style="background:#13131f;padding:10px 16px;display:flex;gap:8px;">
+        <button onclick="runCode()" style="background:var(--pr);color:#fff;border:none;padding:8px 18px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:12px;cursor:pointer;">▶ تشغيل</button>
+        <button onclick="clearCode()" style="background:rgba(255,255,255,.1);color:#fff;border:none;padding:8px 18px;border-radius:50px;font-family:'Cairo',sans-serif;font-size:12px;cursor:pointer;">مسح</button>
+      </div>
+      <div id="code-output" style="background:#0d0d1a;padding:14px 16px;min-height:80px;color:#4eca78;font-family:monospace;font-size:13px;border-top:1px solid rgba(255,255,255,.05);">>>> جاهز للتشغيل...</div>
+    </div>
+  </div>
+</div>
+
+<!-- GAMES MODAL -->
+<div class="modal-overlay" id="games-modal">
+  <div class="modal" style="max-width:760px;">
+    <button class="modal-close" onclick="closeModal('games-modal')">✕</button>
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:4px;">
+      <h3 class="modal-title" style="margin:0;" id="games-title">🎮 الألعاب التعليمية</h3>
+      <div style="background:var(--prl);border:1px solid var(--bdr2);border-radius:50px;padding:6px 16px;font-size:12px;font-weight:700;color:var(--prd);">🏆 نقاطك: <span class="points-display">0</span></div>
+    </div>
+
+    <!-- STEP 1: SUBJECT PICKER -->
+    <div id="games-step-pick">
+      <p class="modal-sub">اختر المادة لتحصل على ألعاب مخصصة لها — كل مادة لها أسئلتها وألغازها المختلفة</p>
+      <div id="games-subjects-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px;"></div>
+    </div>
+
+    <!-- STEP 2: GAME PLAY -->
+    <div id="games-step-play" class="hidden">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px;">
+        <button onclick="backToGamesPicker()" style="background:none;border:none;color:var(--tx3);cursor:pointer;font-family:'Cairo',sans-serif;font-size:13px;">→ غيّر المادة</button>
+        <span id="games-current-subject" style="font-size:13px;font-weight:700;color:var(--pr);"></span>
+      </div>
+      <!-- Game selector -->
+      <div class="tabs" style="margin-bottom:16px;">
+        <div class="tab active" onclick="switchGame('quiz-game',this)">❓ اختبر نفسك</div>
+        <div class="tab" onclick="switchGame('match-game',this)">🔗 صل المفاهيم</div>
+        <div class="tab" onclick="switchGame('riddle-game',this)">🧩 ألغاز تعليمية</div>
+        <div class="tab" onclick="switchGame('puzzle-game',this)">🎯 أكمل الفراغ</div>
+      </div>
+
+    <!-- QUIZ GAME -->
+    <div id="quiz-game" class="game-area">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div style="font-size:13px;font-weight:600;">السؤال <span id="gq-num">1</span> / 5</div>
+        <div style="font-size:13px;font-weight:700;color:var(--pr);">النقاط: <span id="gq-score">0</span></div>
+      </div>
+      <div class="prog-bar" style="margin-bottom:16px;"><div class="prog-fill" id="gq-prog" style="width:20%"></div></div>
+      <div id="gq-question" style="font-size:15px;font-weight:600;color:var(--tx);margin-bottom:16px;line-height:1.6;"></div>
+      <div id="gq-options" style="display:flex;flex-direction:column;gap:10px;"></div>
+      <div id="gq-result" class="hidden" style="text-align:center;padding:24px;">
+        <div style="font-size:48px;margin-bottom:12px;">🏆</div>
+        <h3 style="font-size:20px;font-weight:700;margin-bottom:8px;">انتهت اللعبة!</h3>
+        <p style="font-size:15px;color:var(--tx2);margin-bottom:16px;">مجموع نقاطك: <strong style="color:var(--pr);font-size:20px;" id="gq-final-score">0</strong></p>
+        <button class="btn-pr" style="padding:10px 28px;" onclick="resetQuizGame()">العب مجدداً</button>
+      </div>
+    </div>
+
+    <!-- MATCH GAME -->
+    <div id="match-game" class="game-area hidden">
+      <div style="font-size:13px;font-weight:600;margin-bottom:12px;">اضغط على مصطلح ثم على معناه لتوصيلهما <span id="match-score-display" style="color:var(--pr);font-weight:700;margin-right:10px;"></span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+        <div class="match-col" id="match-terms"></div>
+        <div class="match-col" id="match-defs"></div>
+      </div>
+      <div id="match-feedback" class="hidden" style="margin-top:14px;padding:12px;border-radius:var(--r3);font-size:13px;text-align:center;"></div>
+      <button class="btn-out" style="margin-top:14px;font-size:12px;padding:8px 18px;" onclick="initMatchGame()">إعادة اللعبة</button>
+    </div>
+
+    <!-- RIDDLE GAME -->
+    <div id="riddle-game" class="game-area hidden">
+      <div style="text-align:center;padding:10px 0;">
+        <div style="font-size:36px;margin-bottom:12px;">🧩</div>
+        <div id="riddle-text" style="font-size:16px;font-weight:600;color:var(--tx);line-height:1.7;margin-bottom:20px;max-width:500px;margin-inline:auto;"></div>
+        <button class="btn-pr" style="padding:10px 24px;font-size:13px;margin-bottom:12px;" onclick="showRiddleAnswer()">اعرفي الجواب 💡</button>
+        <div id="riddle-answer" class="hidden" style="padding:14px 20px;background:var(--prl);border-radius:var(--r3);font-size:14px;font-weight:700;color:var(--prd);margin-bottom:14px;"></div>
+        <button class="btn-out" style="padding:8px 20px;font-size:12px;" onclick="nextRiddle()">لغز آخر ↩</button>
+      </div>
+    </div>
+
+    <!-- PUZZLE GAME (fill-in-the-blank) -->
+    <div id="puzzle-game" class="game-area hidden">
+      <div id="puzzle-prompt" style="font-size:13px;font-weight:600;color:var(--tx2);margin-bottom:12px;">أكمل الفراغ:</div>
+      <div id="puzzle-code" style="background:#1e1e2e;border-radius:var(--r2);padding:16px;color:#e2e8f0;font-family:monospace;font-size:13px;line-height:2;margin-bottom:14px;white-space:pre-wrap;"></div>
+      <div id="puzzle-choices" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;"></div>
+      <div id="puzzle-fb" class="hidden" style="margin-top:12px;padding:12px;border-radius:var(--r3);font-size:13px;"></div>
+    </div>
+
+    </div><!-- /games-step-play -->
+  </div>
+</div>
+
+<!-- ZOOM MODAL -->
+<div class="modal-overlay" id="zoom-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('zoom-modal')">✕</button>
+    <h3 class="modal-title">جدولة جلسة دعم</h3>
+    <p class="modal-sub">لمحمد أحمد — يحتاج دعم في وحدة التعلم الآلي</p>
+    <div class="col2" style="margin-bottom:20px;">
+      <div style="padding:20px;background:linear-gradient(135deg,#2D8CFF,#1a5fa5);border-radius:var(--r2);text-align:center;color:#fff;cursor:pointer;" onclick="window.open('https://zoom.us/start/videomeeting','_blank')"><div style="font-size:32px;margin-bottom:8px;">📹</div><div style="font-weight:700;">Zoom Meeting</div><div style="font-size:12px;opacity:.85;margin-top:4px;">انقري للبدء الآن</div></div>
+      <div style="padding:20px;background:linear-gradient(135deg,#6264A7,#4a4c7e);border-radius:var(--r2);text-align:center;color:#fff;cursor:pointer;" onclick="window.open('https://teams.microsoft.com','_blank')"><div style="font-size:32px;margin-bottom:8px;">💼</div><div style="font-weight:700;">MS Teams</div><div style="font-size:12px;opacity:.85;margin-top:4px;">افتح Teams مباشرة</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- AI GEN MODAL -->
+<div class="modal-overlay" id="ai-gen-modal">
+  <div class="modal" style="max-width:680px;">
+    <button class="modal-close" onclick="closeModal('ai-gen-modal')">✕</button>
+    <h3 class="modal-title">🤖 توليد محتوى بالذكاء الاصطناعي</h3>
+    <p class="modal-sub">يولّد محتوى تعليمي حقيقي مخصص للمادة والمستوى</p>
+    <div class="col2" style="margin-bottom:0;">
+      <div class="f-group"><label class="f-label">المادة</label>
+        <select class="f-sel" id="ai-subject"></select>
+        <div style="font-size:10px;color:var(--tx3);margin-top:4px;">جميع المواد المتاحة في المنصة مع دعم كامل لكل كتاب دراسي</div>
+      </div>
+      <div class="f-group"><label class="f-label">مستوى الطالب</label>
+        <select class="f-sel" id="ai-level">
+          <option value="ضعيف">💪 ضعيف — شرح مبسط</option>
+          <option value="متوسط" selected>📈 متوسط — شرح متوازن</option>
+          <option value="ممتاز">🏆 ممتاز — تحدي متقدم</option>
+        </select>
+      </div>
+    </div>
+    <div class="f-group"><label class="f-label">📖 الموضوع من المنهج الرسمي</label>
+      <select class="f-sel" id="ai-topic-select"></select>
+      <div style="font-size:10px;color:var(--tx3);margin-top:4px;">اختر درساً من المنهج الحقيقي للأول الثانوي 2025-2026 (أو اكتب أي موضوع آخر بالأسفل)</div>
+    </div>
+    <div class="f-group"><label class="f-label">✏️ موضوع مخصّص (اختياري)</label><input class="f-inp" type="text" value="مقدمة في الذكاء الاصطناعي" id="ai-topic" placeholder="مثلاً: المشتقات، الجملة الاسمية، التمثيل الضوئي..."></div>
+    <div class="f-group"><label class="f-label">نوع المحتوى</label>
+      <select class="f-sel" id="ai-content-type">
+        <option value="summary">📋 ملخص نصي للدرس</option>
+        <option value="quiz">📝 اختبار (10 أسئلة MCQ)</option>
+        <option value="pdf">📄 ملف PDF تعليمي</option>
+        <option value="video">🎥 محتوى فيديو</option>
+        <option value="podcast">🎙️ بودكاست تعليمي</option>
+        <option value="mindmap">🗺️ خريطة ذهنية نصية</option>
+        <option value="ppt">📊 شرائح عرض (نص)</option>
+        <option value="explain">🎓 شرح مفصل خطوة بخطوة</option>
+        <option value="exercises">✍️ تمارين تطبيقية متدرجة</option>
+        <option value="review">🔁 مراجعة سريعة قبل الامتحان</option>
+      </select>
+      <div style="font-size:12px;color:var(--tx3);margin-top:4px;">🎯 اختر نوع المحتوى ثم اضغط توليد ليتم تخصيص المحتوى حسب مستواك.</div>
+    </div>
+    <button class="btn-pr" id="ai-gen-btn" style="width:100%;padding:12px;" onclick="generateAIContent()">توليد المحتوى الآن ✨</button>
+    <div id="ai-gen-result" class="hidden" style="margin-top:16px;padding:16px;background:var(--prl);border-radius:var(--r3);font-size:13px;color:var(--tx2);line-height:1.8;max-height:400px;overflow-y:auto;white-space:pre-wrap;"></div>
+    <div id="ai-gen-actions" class="hidden" style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;">
+      <button class="l-btn" onclick="copyAIResult()">📋 نسخ</button>
+      <button class="l-btn" onclick="downloadAIResult()">📥 تحميل كملف</button>
+    </div>
+  </div>
+</div>
+
+<!-- STUDENT REPORT MODAL -->
+<div class="modal-overlay" id="student-report-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('student-report-modal')">✕</button>
+    <h3 class="modal-title">تقرير مفصل — أحمد محمد</h3>
+    <div class="stats-grid">
+      <div class="stat-card"><div class="stat-icon si-o">📊</div><div class="stat-val">88%</div><div class="stat-label">المعدل العام</div></div>
+      <div class="stat-card"><div class="stat-icon si-g">✅</div><div class="stat-val">9/12</div><div class="stat-label">دروس مكتملة</div></div>
+      <div class="stat-card"><div class="stat-icon si-b">⏱️</div><div class="stat-val">4.2 س</div><div class="stat-label">يومياً</div></div>
+      <div class="stat-card"><div class="stat-icon si-p">🏆</div><div class="stat-val">2,100</div><div class="stat-label">النقاط</div></div>
+    </div>
+    <div style="margin-top:14px;padding:14px;background:var(--prl);border-radius:var(--r3);">
+      <p style="font-size:13px;font-weight:700;color:var(--prd);margin-bottom:6px;">🤖 توصية AI للمعلم:</p>
+      <p style="font-size:12px;color:var(--tx2);">أحمد يؤدي بشكل ممتاز في الجزء النظري لكن يحتاج مزيداً من التطبيق العملي على Python. يُنصح بإضافته لمجموعة التطبيق العملي في الجلسة القادمة.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FORUM MODAL -->
+<div class="modal-overlay" id="forum-modal">
+  <div class="modal" style="max-width:760px;">
+    <button class="modal-close" onclick="closeModal('forum-modal')">✕</button>
+    <h3 class="modal-title">💬 منتديات النقاش التعليمي</h3>
+    <p class="modal-sub">تبادل الأفكار واطرح أسئلتك مع زملائك ومعلميك</p>
+    <div class="tabs" style="margin-bottom:16px;">
+      <div class="tab active" onclick="forumTab('questions',this)">❓ أسئلة المواد</div>
+      <div class="tab" onclick="forumTab('discuss',this)">💡 نقاشات تعليمية</div>
+      <div class="tab" onclick="forumTab('help',this)">🆘 طلبات مساعدة</div>
+    </div>
+    <div id="forum-questions">
+      <button class="btn-pr" style="font-size:12px;padding:9px 20px;margin-bottom:16px;" onclick="alert('سيتم فتح نموذج إنشاء موضوع جديد!')">+ موضوع جديد</button>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);cursor:pointer;" onclick="alert('فتح الموضوع...')">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+            <div style="flex:1;"><div style="font-size:14px;font-weight:700;margin-bottom:4px;">كيف أحل مسائل التفاضل بطريقة سهلة؟</div><div style="font-size:12px;color:var(--tx3);">📐 الرياضيات · بواسطة أحمد محمد</div></div>
+            <div style="text-align:left;flex-shrink:0;"><span class="badge b-info">12 رد</span><div style="font-size:10px;color:var(--tx3);margin-top:3px;">منذ ساعتين</div></div>
+          </div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);cursor:pointer;" onclick="alert('فتح الموضوع...')">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+            <div style="flex:1;"><div style="font-size:14px;font-weight:700;margin-bottom:4px;">مساعدة في فهم قصيدة المتنبي</div><div style="font-size:12px;color:var(--tx3);">📚 اللغة العربية · بواسطة فاطمة علي</div></div>
+            <div style="text-align:left;flex-shrink:0;"><span class="badge b-suc">8 رد</span><div style="font-size:10px;color:var(--tx3);margin-top:3px;">منذ 3 ساعات</div></div>
+          </div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);cursor:pointer;" onclick="alert('فتح الموضوع...')">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+            <div style="flex:1;"><div style="font-size:14px;font-weight:700;margin-bottom:4px;">شرح مفهوم الخوارزمية في البرمجة</div><div style="font-size:12px;color:var(--tx3);">💻 البرمجة والذكاء الاصطناعي · بواسطة محمد سامي</div></div>
+            <div style="text-align:left;flex-shrink:0;"><span class="badge b-warn">5 رد</span><div style="font-size:10px;color:var(--tx3);margin-top:3px;">أمس</div></div>
+          </div>
+        </div>
+        <div style="padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);cursor:pointer;" onclick="alert('فتح الموضوع...')">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:10px;">
+            <div style="flex:1;"><div style="font-size:14px;font-weight:700;margin-bottom:4px;">أنواع الجمل في اللغة العربية</div><div style="font-size:12px;color:var(--tx3);">📚 اللغة العربية · بواسطة نور إبراهيم</div></div>
+            <div style="text-align:left;flex-shrink:0;"><span class="badge b-info">19 رد</span><div style="font-size:10px;color:var(--tx3);margin-top:3px;">منذ يومين</div></div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:16px;padding:14px;background:var(--bg);border-radius:var(--r2);border:1px solid var(--bdr);">
+        <div style="font-size:13px;font-weight:700;margin-bottom:10px;">اكتب ردك</div>
+        <textarea class="f-inp" style="width:100%;height:80px;resize:vertical;" placeholder="شارك برأيك أو إجابتك..."></textarea>
+        <button class="btn-pr" style="font-size:12px;padding:8px 20px;margin-top:8px;" onclick="alert('تم إرسال ردك بنجاح! ✓')">إرسال الرد</button>
+      </div>
+    </div>
+    <div id="forum-discuss" class="hidden">
+      <div style="text-align:center;padding:30px;opacity:.7;"><div style="font-size:36px;margin-bottom:8px;">💡</div><div>النقاشات التعليمية قريباً...</div></div>
+    </div>
+    <div id="forum-help" class="hidden">
+      <div style="text-align:center;padding:30px;opacity:.7;"><div style="font-size:36px;margin-bottom:8px;">🆘</div><div>طلبات المساعدة قريباً...</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ CREATE MODAL -->
+<div class="modal-overlay" id="quiz-create-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('quiz-create-modal')">✕</button>
+    <h3 class="modal-title">إنشاء اختبار جديد</h3>
+    <div class="f-group"><label class="f-label">عنوان الاختبار</label><input class="f-inp" type="text" placeholder="مثل: اختبار الوحدة الأولى"></div>
+    <div class="f-group"><label class="f-label">المادة</label><select class="f-sel"><option>البرمجة والذكاء الاصطناعي</option><option>الرياضيات</option></select></div>
+    <div class="f-group"><label class="f-label">عدد الأسئلة</label><input class="f-inp" type="number" value="10" min="5" max="50"></div>
+    <div class="f-group"><label class="f-label">مدة الاختبار (دقائق)</label><input class="f-inp" type="number" value="30"></div>
+    <button class="btn-pr" style="width:100%;padding:12px;" onclick="alert('تم إنشاء الاختبار بنجاح وإضافته للمنصة! ✓');closeModal('quiz-create-modal')">إنشاء الاختبار</button>
+  </div>
+</div>
+
+<!-- LEVEL TEST MODAL -->
+<div class="modal-overlay" id="level-test-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('level-test-modal')">✕</button>
+    <h3 class="modal-title">🎯 اختبار تحديد المستوى</h3>
+    <p class="modal-sub" id="lt-sub">5 أسئلة سريعة — سيحدد مستواك الدراسي</p>
+    <div id="lt-test-area">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:600;">السؤال <span id="lt-num">1</span> / 5</div>
+        <div class="badge b-info" id="lt-subj-badge">المادة</div>
+      </div>
+      <div class="prog-bar" style="margin-bottom:16px;"><div class="prog-fill" id="lt-prog" style="width:20%"></div></div>
+      <div id="lt-question" style="font-size:15px;font-weight:600;color:var(--tx);margin-bottom:16px;line-height:1.6;"></div>
+      <div id="lt-options" style="display:flex;flex-direction:column;gap:10px;"></div>
+    </div>
+    <div id="lt-result" class="hidden" style="text-align:center;padding:24px;">
+      <div id="lt-result-icon" style="font-size:52px;margin-bottom:12px;">🏆</div>
+      <h3 id="lt-result-title" style="font-size:20px;font-weight:700;margin-bottom:8px;"></h3>
+      <p id="lt-result-msg" style="font-size:14px;color:var(--tx2);line-height:1.7;margin-bottom:16px;"></p>
+      <div id="lt-adaptive-note" style="display:none;margin-top:12px;padding:10px 16px;background:var(--prl);border-radius:var(--r3);font-size:12px;color:var(--prd);font-weight:600;"></div>
+      <button class="btn-pr" style="padding:11px 28px;" onclick="closeLevelTest()">ابدأ التعلم الآن ✨</button>
+    </div>
+  </div>
+</div>
+
+<!-- FLOATING CHATBOT -->
+<button id="float-chat-btn" onclick="toggleFloatChat()" title="المساعد الذكي">🤖</button>
+<div id="float-chat-panel" class="hidden">
+  <div style="background:linear-gradient(135deg,#7B3ADB,#9B5AE5);padding:14px 16px;display:flex;align-items:center;justify-content:space-between;border-radius:18px 18px 0 0;">
+    <div style="color:#fff;font-size:14px;font-weight:700;">✨ المساعد الذكي</div>
+    <button onclick="toggleFloatChat()" style="background:rgba(255,255,255,.2);border:none;color:#fff;width:28px;height:28px;border-radius:50%;cursor:pointer;font-size:14px;display:flex;align-items:center;justify-content:center;">✕</button>
+  </div>
+  <div id="float-chat-header" style="display:none;padding:10px 14px;font-size:12px;color:#fff;background:rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.12);text-align:right;">💬 إسألني عن البرمجة، الدروس، أو أي موضوع تعليمي وسأقدّم لك محتوى وفق مستواك.</div>
+  <div id="float-msgs" style="flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px;min-height:200px;max-height:300px;"></div>
+  <div id="float-suggestions" style="padding:6px 12px;display:flex;flex-wrap:wrap;gap:6px;border-top:1px solid var(--bdr);background:#fafafa;">
+    <button class="qr-chip" onclick="quickAsk('float','كيف أنشئ حساب على المنصة؟')">🆕 إنشاء حساب</button>
+    <button class="qr-chip" onclick="quickAsk('float','كيف أسجل الدخول؟')">🔐 تسجيل الدخول</button>
+    <button class="qr-chip" onclick="quickAsk('float','ما هي المنصة؟')">🏫 عن المنصة</button>
+    <button class="qr-chip" onclick="quickAsk('float','كيف أذاكر؟')">📚 نصيحة دراسية</button>
+  </div>
+  <div style="padding:10px 14px;border-top:1px solid var(--bdr);display:flex;gap:8px;">
+    <input id="float-inp" type="text" class="f-inp" style="flex:1;padding:9px 12px;font-size:13px;" placeholder="اسألني أي شيء..." onkeypress="if(event.key==='Enter')sendAI('float')">
+    <button class="btn-pr" style="padding:9px 14px;font-size:13px;" onclick="sendAI('float')">إرسال</button>
+  </div>
+</div>
+
+<!-- ======================================================
+     JAVASCRIPT
+====================================================== -->
+<div id="parent-add-child-modal" class="modal-overlay hidden">
+  <div class="modal">
+    <button class="modal-close" onclick="closeAddChildModal()">×</button>
+    <div class="modal-title">ربط ابن جديد</div>
+    <div class="modal-sub">أدخل كود الطالب وأضف ابناً جديداً للمتابعة.</div>
+    <div class="f-group"><label class="f-label">كود الطالب</label><input id="new-child-code" class="f-inp" placeholder="مثلاً: STU-2026-001" /></div>
+    <div class="f-group"><label class="f-label">المرحلة / الصف</label><select id="new-child-stage" class="f-sel">
+      <option value="الصف الأول الثانوي">الصف الأول الثانوي</option>
+      <option value="الصف الثاني الثانوي">الصف الثاني الثانوي</option>
+      <option value="الصف الثالث الثانوي">الصف الثالث الثانوي</option>
+    </select></div>
+    <div class="f-group"><label class="f-label">اسم الابن (اختياري)</label><input id="new-child-name" class="f-inp" placeholder="مثلاً: علي محمد" /></div>
+    <button class="btn-pr" style="width:100%;padding:12px;margin-top:12px;" onclick="addChildByCode()">إضافة الابن</button>
+  </div>
+</div>
+<script src="seduc_main.js"></script>
+<div id="videoModal" class="video-modal">
+  <div class="video-modal-content">
+    <button class="video-close-btn" onclick="closeVideo()">×</button>
+
+    <iframe
+      id="videoFrame"
+      width="100%"
+      height="420"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+</div>
+</body>
+</html>
